@@ -169,12 +169,12 @@ class HardwareDetector:
     def _get_supported_models(self, tier: str) -> List[str]:
         """Get supported models for hardware tier"""
         models = {
-            "ultra": ["stable_video_diffusion_xl", "runwayml_gen2", "animate_diff"],
-            "high": ["stable_video_diffusion", "animate_diff", "ken_burns"],
-            "medium": ["animate_diff", "ken_burns", "basic_animation"],
-            "low": ["ken_burns", "basic_animation", "slideshow"]
+            "ultra": ["ken_burns", "stable_video_diffusion_xl", "runwayml_gen2", "animate_diff"],
+            "high": ["ken_burns", "stable_video_diffusion", "animate_diff"],
+            "medium": ["ken_burns", "animate_diff"],
+            "low": ["ken_burns"]
         }
-        return models.get(tier, ["slideshow"])
+        return models.get(tier, ["ken_burns"])
     
     def get_hardware_summary(self) -> Dict:
         """Get complete hardware summary"""

@@ -22,9 +22,9 @@ class ModelManager:
                 if pref in supported_models:
                     return pref
         
-        # Default selection based on tier
+        # Default selection based on tier (AI models)
         if hardware_tier == "ultra":
-            return "stable_video_diffusion_xl"
+            return "stable_video_diffusion"  # Use regular SVD instead of XL
         elif hardware_tier == "high":
             return "stable_video_diffusion"
         elif hardware_tier == "medium":
@@ -40,14 +40,13 @@ class ModelManager:
         # Get optimal settings
         settings = self.hardware_detector.get_optimal_settings(model_name)
         
-        # Force Ken Burns for now (no AI model dependency)
-        if model_name in ["stable_video_diffusion_xl", "stable_video_diffusion", "animate_diff"]:
-            self.logger.warning(f"AI model {model_name} requires authentication, falling back to Ken Burns")
-            model_name = "ken_burns"
-        
         # Load model based on name
         if model_name == "ken_burns":
             model = self._load_ken_burns(settings)
+        elif model_name == "stable_video_diffusion":
+            model = self._load_stable_video_diffusion(settings)
+        elif model_name == "animate_diff":
+            model = self._load_animate_diff(settings)
         else:
             raise ValueError(f"Unknown model: {model_name}")
         
@@ -93,6 +92,7 @@ class ModelManager:
             
         except Exception as e:
             self.logger.error(f"Failed to load SVD: {e}")
+            self.logger.info("Please ensure you have Hugging Face token set up")
             raise
     
     def _load_animate_diff(self, settings: Dict) -> BaseModel:

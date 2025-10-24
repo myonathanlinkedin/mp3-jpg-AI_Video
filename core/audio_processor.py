@@ -13,7 +13,7 @@ class AudioProcessor:
     def get_audio_duration(self, audio_path: str) -> float:
         """Get audio duration in seconds"""
         try:
-            duration = librosa.get_duration(filename=audio_path)
+            duration = librosa.get_duration(path=audio_path)
             return duration
         except Exception as e:
             self.logger.error(f"Failed to get audio duration: {e}")
