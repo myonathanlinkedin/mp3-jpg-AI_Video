@@ -1,48 +1,56 @@
-# Project Structure - AI Video Generator with Faiss Semantic Search
+# Project Structure - Advanced AI Video Generator with Multi-Scale Long Sentence Matching
 
-This document outlines the complete project architecture for the AI-powered lyric synchronization video generation system using Faiss semantic search.
+This document outlines the complete project architecture for the advanced AI-powered lyric synchronization video generation system featuring multi-scale semantic search, adaptive language detection, and long sentence optimization.
 
 ## 📁 Directory Structure
 
 ```
 generatevideofromaudioimage/
-├── ai_lyric_sync_generator.py    # Main application script
-├── context/                      # Input/output directory
-│   ├── rapper.jpg               # Input image file
+├── advanced_long_sentence_generator.py  # Main advanced application script
+├── context/                            # Input/output directory
+│   ├── rapper.jpg                     # Input image file
 │   ├── Title _ Judul_Black Chains _ Rantai Hi_cmp.mp3  # Input audio file
-│   └── ai_lyric_sync_video.mp4  # Generated output video
-├── README.md                     # Project overview and quick start
-├── INSTALLATION.md               # Detailed installation instructions
-├── USAGE.md                      # Comprehensive usage guide
-└── PROJECT_STRUCTURE.md          # This file
+│   ├── comparison_lyrics.txt          # Reference lyrics file
+│   ├── extracted_lyrics.txt           # AI-extracted lyrics (generated)
+│   ├── matched_lyrics.txt            # Detailed matching results (generated)
+│   └── advanced_long_sentence_video.mp4 # Generated output video
+├── README.md                           # Project overview and quick start
+├── INSTALLATION.md                     # Detailed installation instructions
+├── USAGE.md                            # Comprehensive usage guide
+└── PROJECT_STRUCTURE.md                # This file
 ```
 
 ## 🎯 Core Components
 
-### Main Application (`ai_lyric_sync_generator.py`)
+### Main Application (`advanced_long_sentence_generator.py`)
 
-The primary script that orchestrates the entire video generation process:
+The primary script that orchestrates the entire advanced video generation process:
 
-#### Class: `AILyricSyncGenerator`
+#### Class: `AdvancedLongSentenceLyricSyncGenerator`
 
 **Key Methods:**
-- `__init__()`: Initialize the generator with file paths
+- `__init__()`: Initialize the generator with file paths and analysis file paths
 - `_get_audio_duration()`: Extract audio duration using librosa
-- `_extract_text_from_audio()`: AI text extraction using Whisper
-- `_match_extracted_text_with_lyrics()`: Intelligent text matching
-- `_ensure_sequential_timing()`: Ensure all lyrics are displayed
-- `_fallback_timing()`: Fallback timing for unmatched lyrics
-- `_create_smooth_frames()`: Generate animated video frames
+- `_detect_language()`: Detect English vs Indonesian lyrics
+- `_extract_text_from_audio()`: Enhanced AI text extraction using Whisper with optimized segmentation
+- `_build_multi_scale_faiss_index()`: Build Faiss index with small, medium, and large chunks
+- `_multi_scale_semantic_search()`: Multi-scale semantic search with adaptive thresholds
+- `_calculate_adaptive_duration()`: Calculate optimal duration based on language and vocal characteristics
+- `_match_lyrics_advanced()`: Advanced lyric matching with multi-scale approach
+- `_save_matched_lyrics()`: Save detailed matching results to file
+- `_validate_and_fix_advanced_timing()`: Advanced timing validation with language awareness
+- `_fallback_timing()`: Enhanced fallback timing for unmatched lyrics
+- `_create_smooth_frames()`: Generate animated video frames with color-coded lyrics
 - `generate_video()`: Main orchestration method
 
 **Dependencies:**
-- `whisper`: AI text extraction
+- `whisper`: Enhanced AI text extraction
 - `moviepy`: Video creation and editing
 - `PIL/Pillow`: Image processing
 - `librosa`: Audio analysis
 - `numpy`: Numerical operations
-- `faiss`: Semantic search engine
-- `sentence_transformers`: Text embeddings
+- `faiss`: Multi-scale semantic search engine
+- `sentence_transformers`: Text embeddings for semantic search
 - `torch`: PyTorch framework
 
 ## 🔧 Technical Architecture
@@ -54,17 +62,25 @@ The primary script that orchestrates the entire video generation process:
    - Supports CUDA acceleration when available
    - Caches model for multiple uses
 
-2. **Audio Processing**
+2. **Audio Processing with Speaker Detection**
    - Transcribes audio with word-level timestamps
    - Extracts spoken text with precise timing
+   - Detects speaker changes based on audio characteristics
    - Handles multiple languages (detected automatically)
 
-3. **Faiss Semantic Search**
+3. **Multiple Speaker Analysis**
+   - Detects overlapping voices and simultaneous speakers
+   - Groups speakers by overlap patterns
+   - Analyzes song structure (verses, choruses, bridges, outros)
+   - Groups lyrics by song structure with speaker attribution
+
+4. **Faiss Semantic Search with Multiple Speakers**
    - Builds Faiss index with Sentence Transformers embeddings
-   - Creates text chunks from extracted words
-   - Performs semantic search for each lyric
+   - Creates text chunks from extracted words with speaker info
+   - Performs semantic search for each lyric group
    - Maps timing from AI extraction to provided lyrics
-   - Ensures sequential timing for complete coverage
+   - Handles overlapping voices with appropriate timing rules
+   - Ensures sequential timing for complete coverage across all speakers
 
 ### Video Generation Pipeline
 
@@ -83,24 +99,46 @@ The primary script that orchestrates the entire video generation process:
    - Uses H.264 codec for optimal compression
    - Maintains high quality output
 
-## 🎵 Lyric Synchronization System
+## 🎵 Lyric Synchronization System with Multiple Speakers
 
-### Text Matching Strategy
+### Multiple Speaker Detection Strategy
 
-1. **Full Text Search**
-   - Searches entire extracted text for each lyric
-   - Uses minimum 20% match ratio for flexibility
-   - Prioritizes longest matches for accuracy
+1. **Speaker Change Detection**
+   - Analyzes time gaps between segments (>1.5s threshold)
+   - Detects tempo changes (>40% difference)
+   - Identifies word length variations (>30% difference)
+   - Assigns speaker IDs based on audio characteristics
 
-2. **Sequential Timing**
+2. **Overlapping Voices Analysis**
+   - Detects segments with >30% overlap
+   - Groups speakers by overlap patterns
+   - Identifies choruses (>2 speakers) and duets (2 speakers)
+   - Analyzes song structure based on voice groups
+
+3. **Song Structure Analysis**
+   - Groups lyrics into verses, choruses, bridges, outros
+   - Assigns appropriate speakers to each group
+   - Handles overlapping vs non-overlapping segments differently
+
+### Text Matching Strategy with Multiple Speakers
+
+1. **Semantic Search with Speaker Awareness**
+   - Searches extracted text for each lyric group
+   - Uses minimum 35% similarity threshold for overlapping voices
+   - Prioritizes semantic matches with speaker attribution
+   - Handles overlapping voices with flexible timing rules
+
+2. **Intelligent Timing Validation**
+   - Different timing rules for overlapping vs non-overlapping segments
+   - Allows larger overlap for choruses (up to 80% of previous duration)
+   - Allows smaller overlap for mixed segments (up to 50% of previous duration)
+   - Normal overlap fixing for non-overlapping segments (shifts start time)
+
+3. **Sequential Timing Across All Speakers**
    - Ensures all lyrics are displayed from start to finish
-   - Calculates average time per lyric
+   - Maintains proper speaker attribution
    - Provides fallback timing for unmatched lyrics
-
-3. **Timing Validation**
-   - Validates all timing data
-   - Ensures no negative or invalid timestamps
-   - Maintains chronological order
+   - Validates timing with overlapping voices awareness
 
 ### Animation System
 
@@ -161,10 +199,14 @@ fade_duration = 0.3        # Text fade effect duration
 ### Text Matching Parameters
 
 ```python
-# Matching sensitivity
-similarity_threshold = 0.3  # Minimum semantic similarity threshold
+# Matching sensitivity with multiple speakers
+similarity_threshold = 0.35  # Minimum semantic similarity threshold for overlapping voices
 lyric_coverage = 0.90       # Percentage of audio duration for lyrics
-chunk_size = 5             # Words per text chunk for semantic search
+chunk_size = 10            # Words per text chunk for semantic search (increased for better context)
+overlap_size = 3           # Words overlap between chunks
+top_k = 7                 # Number of candidates for semantic search
+min_duration = 0.2        # Minimum lyric duration for overlapping voices
+max_duration = 15.0       # Maximum lyric duration for overlapping voices
 ```
 
 ## 🚀 Deployment Considerations

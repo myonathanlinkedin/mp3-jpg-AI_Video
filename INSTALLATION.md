@@ -1,6 +1,6 @@
-# Installation Guide - AI Video Generator with Faiss Semantic Search
+# Installation Guide - Advanced AI Video Generator with Multi-Scale Long Sentence Matching
 
-This guide provides detailed installation instructions for the AI-powered lyric synchronization video generation system using Faiss semantic search.
+This guide provides detailed installation instructions for the advanced AI-powered lyric synchronization video generation system featuring multi-scale semantic search, adaptive language detection, and long sentence optimization.
 
 ## 🎯 System Requirements
 
