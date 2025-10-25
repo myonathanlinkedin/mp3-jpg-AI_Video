@@ -1,237 +1,267 @@
-# Usage Guide
+# Usage Guide - AI Video Generator with Faiss Semantic Search
 
-## Quick Start
+This guide explains how to use the AI-powered lyric synchronization system with Faiss semantic search for creating dynamic videos from MP3 audio and static images.
 
-### 1. Prepare Your Files
-Place your image and MP3 file in the `context/` folder:
+## 🎯 Final Approach Overview
+
+**AI Text Extraction + Faiss Semantic Search**: The system uses OpenAI Whisper to extract text from audio, then employs Faiss-powered semantic search with Sentence Transformers for intelligent lyric matching and synchronization.
+
+### Core Workflow
+
+1. **AI Text Extraction** → OpenAI Whisper extracts text from MP3 with word-level timestamps
+2. **Faiss Index Building** → Creates semantic embeddings using Sentence Transformers
+3. **Semantic Search** → Faiss finds best semantic matches for each lyric
+4. **Text Polishing** → Provided lyrics refine AI-generated text for accuracy
+5. **Sequential Timing** → Ensures all lyrics are displayed from start to finish
+6. **Video Generation** → Create smooth animated video with synchronized text
+
+## 🚀 Basic Usage
+
+### Single Video Generation
+
+```bash
+python ai_lyric_sync_generator.py
+```
+
+This will:
+- Load `context/rapper.jpg` as the base image
+- Process `context/Title _ Judul_Black Chains _ Rantai Hi_cmp.mp3` audio
+- Extract text using OpenAI Whisper AI
+- Build Faiss index with Sentence Transformers embeddings
+- Perform semantic search to match lyrics with audio segments
+- Generate `context/ai_lyric_sync_video.mp4` with synchronized lyrics
+
+## 🎵 How the AI Text Extraction Works
+
+### 1. Whisper Text Extraction
+
+The AI analyzes the audio file to extract spoken text:
+
+```python
+# Load Whisper model
+whisper_model = whisper.load_model("base")
+
+# Extract text with word-level timestamps
+result = whisper_model.transcribe(
+    audio_path, 
+    word_timestamps=True,
+    verbose=False
+)
+
+# Get word-level timestamps
+words_with_timestamps = []
+for segment in result['segments']:
+    for word in segment['words']:
+        words_with_timestamps.append({
+            'word': word['word'].strip(),
+            'start': word['start'],
+            'end': word['end']
+        })
+```
+
+### 2. Faiss Semantic Search
+
+The system uses Faiss for intelligent semantic matching:
+
+```python
+# Build Faiss index with Sentence Transformers
+text_chunks = create_text_chunks(extracted_words, chunk_size=5)
+embeddings = sentence_model.encode(text_chunks)
+faiss_index = faiss.IndexFlatIP(dimension)
+faiss.normalize_L2(embeddings)
+faiss_index.add(embeddings)
+
+# Perform semantic search for each lyric
+lyric_embedding = sentence_model.encode([lyric_text])
+faiss.normalize_L2(lyric_embedding)
+similarities, indices = faiss_index.search(lyric_embedding, top_k=3)
+
+# Map timing from best semantic match
+if similarities[0][0] > 0.3:  # Minimum similarity threshold
+    best_match = text_chunks[indices[0][0]]
+    start_time = chunk_timings[indices[0][0]]['start']
+    end_time = chunk_timings[indices[0][0]]['end']
+```
+
+### 3. Sequential Timing
+
+Ensures all lyrics are displayed from start to finish:
+
+```python
+def _ensure_sequential_timing(self, lyric_data, duration):
+    # Calculate average time per lyric
+    total_lyric_time = duration * 0.90
+    time_per_lyric = total_lyric_time / len(lyric_data)
+    
+    # Ensure each lyric has sequential timing
+    for i, lyric_entry in enumerate(lyric_data):
+        if lyric_entry['start'] < 0 or lyric_entry['end'] < 0:
+            start_time = i * time_per_lyric
+            end_time = (i + 1) * time_per_lyric
+            lyric_entry['start'] = start_time
+            lyric_entry['end'] = end_time
+```
+
+## 🎨 Animation Features
+
+### Smooth Image Movement
+
+The system creates complex, multi-frequency animations:
+
+```python
+# Multi-frequency transformations
+zoom_factor = 1.0 + 0.05 * math.sin(2 * math.pi * progress)
+pan_x = 0.02 * math.sin(2 * math.pi * progress * 4)
+pan_y = 0.02 * math.cos(2 * math.pi * progress * 3)
+rotation = 1.0 * math.sin(2 * math.pi * progress * 2)
+```
+
+### Lyric Display Effects
+
+- **Fade In/Out**: Smooth appearance and disappearance
+- **Stroke Effects**: Black outline for text readability
+- **Position Optimization**: Centered at bottom with proper spacing
+- **Sequential Display**: All lyrics shown from start to finish
+
+## 📁 File Structure
+
 ```
 context/
-├── your_image.jpg
-└── your_audio.mp3
+├── rapper.jpg                                    # Input image
+├── Title _ Judul_Black Chains _ Rantai Hi_cmp.mp3  # Input audio
+└── ai_lyric_sync_video.mp4                      # Generated video
 ```
 
-### 2. Edit Lyrics
-Open `smooth_video_generator.py` and modify the lyrics array:
-```python
-lyrics = [
-    "Your first lyric line",
-    "Your second lyric line",
-    "Your third lyric line",
-    # Add more lines as needed
-]
-```
+## ⚙️ Configuration Options
 
-### 3. Run the Script
-```bash
-python smooth_video_generator.py
-```
-
-### 4. Check Output
-Your video will be saved as `context/smooth_video_with_lyrics.mp4`
-
-## Detailed Usage
-
-### File Preparation
-
-#### Image Requirements
-- **Format**: JPG, PNG, or other PIL-supported formats
-- **Resolution**: Any resolution (will be processed as-is)
-- **Size**: Larger images may take longer to process
-- **Content**: Works best with clear, high-contrast images
-
-#### Audio Requirements
-- **Format**: MP3, WAV, or other MoviePy-supported formats
-- **Duration**: Any length (longer videos take more time)
-- **Quality**: Higher quality audio produces better results
-- **Content**: Any audio content (music, speech, etc.)
-
-### Lyrics Configuration
-
-#### Basic Lyrics Setup
-```python
-lyrics = [
-    "Black Chains",
-    "Rantai Hitam", 
-    "Mengikat jiwa",
-    "Dalam kegelapan",
-    "Mencari cahaya",
-    "Di tengah malam"
-]
-```
-
-#### Advanced Lyrics Configuration
-```python
-# For longer songs, add more lines
-lyrics = [
-    "Verse 1 - Line 1",
-    "Verse 1 - Line 2", 
-    "Chorus - Line 1",
-    "Chorus - Line 2",
-    "Verse 2 - Line 1",
-    "Verse 2 - Line 2",
-    # Continue for full song
-]
-```
-
-### Customization Options
-
-#### Animation Settings
-Modify these parameters in the script for different effects:
+### Whisper Model Selection
 
 ```python
-# Zoom settings
-zoom_base = 1.0                    # Base zoom level
-zoom_variation = 0.3              # Zoom variation amount
-
-# Pan settings  
-pan_x = int(80 * math.sin(...))    # Horizontal movement range
-pan_y = int(60 * math.cos(...))    # Vertical movement range
-
-# Rotation settings
-rotation_angle = 2 * math.sin(...) # Maximum rotation (degrees)
+# Available models (in order of accuracy vs speed)
+whisper_model = whisper.load_model("tiny")    # Fastest, least accurate
+whisper_model = whisper.load_model("base")    # Balanced (recommended)
+whisper_model = whisper.load_model("small")   # More accurate
+whisper_model = whisper.load_model("medium") # High accuracy
+whisper_model = whisper.load_model("large")  # Highest accuracy, slowest
 ```
 
-#### Text Settings
-Customize text appearance:
+### Text Matching Parameters
 
 ```python
-# Font settings
-font = ImageFont.truetype("arial.ttf", 60)  # Font size
-
-# Text position
-text_y = height - text_height - 80           # Distance from bottom
-
-# Text colors
-text_color = (255, 255, 255)                 # White text
-outline_color = (0, 0, 0)                    # Black outline
+# Adjustable parameters in the script
+similarity_threshold = 0.3  # Minimum semantic similarity threshold
+chunk_size = 5            # Words per text chunk for semantic search
+fade_duration = 0.5       # Fade effect duration
+font_size = 45           # Text size
 ```
 
-#### Video Settings
-Adjust output quality:
+### Video Output Settings
 
 ```python
-# Frame rate
-fps = 30                                      # Higher = smoother, larger file
-
-# Video codec
-codec = 'libx264'                            # H.264 compression
-audio_codec = 'aac'                          # AAC audio
+# Video specifications
+fps = 30                # Frames per second
+image_size = (1024, 1024)  # Output resolution
 ```
 
-## Advanced Usage
+## 🎯 Use Cases
 
-### Batch Processing
-Process multiple videos by modifying the script:
+### 1. Music Video Creation
+- Create lyric videos with accurate text extraction
+- Generate visual content for music streaming
+- Produce promotional materials with perfect sync
+
+### 2. Educational Content
+- Language learning with precise text matching
+- Music education with accurate lyrics
+- Presentation materials with audio-visual elements
+
+### 3. Social Media Content
+- Instagram/Facebook video posts
+- TikTok-style lyric videos
+- YouTube content creation
+
+## 🔧 Advanced Usage
+
+### Custom Semantic Search
+
+You can modify the semantic search parameters:
 
 ```python
-# List of input files
-input_files = [
-    ("image1.jpg", "audio1.mp3", "output1.mp4"),
-    ("image2.jpg", "audio2.mp3", "output2.mp4"),
-    ("image3.jpg", "audio3.mp3", "output3.mp4")
-]
-
-# Process each file
-for image_path, audio_path, output_path in input_files:
-    generator.create_smooth_animation(image_path, audio_path, lyrics, output_path)
+# In ai_lyric_sync_generator.py
+def _semantic_search_lyric(self, lyric_text, text_chunks, chunk_timings, top_k=3):
+    # Adjust semantic search sensitivity
+    similarity_threshold = 0.3  # Lower = more lenient matching
+    chunk_size = 5             # Words per chunk for semantic search
+    # Perform Faiss semantic search
+    similarities, indices = self.faiss_index.search(lyric_embedding, top_k)
 ```
 
-### Custom Animation Patterns
-Create different movement patterns:
+### Animation Customization
+
+Modify the animation parameters for different visual effects:
 
 ```python
-# Slow, gentle movement
-pan_x = int(30 * math.sin(progress * math.pi * 1.5))
-pan_y = int(20 * math.cos(progress * math.pi * 1.2))
-
-# Fast, dynamic movement  
-pan_x = int(120 * math.sin(progress * math.pi * 4))
-pan_y = int(80 * math.cos(progress * math.pi * 3))
+# Adjust animation intensity
+zoom_factor = 1.0 + 0.05 * math.sin(2 * math.pi * progress)  # Reduce 0.05 for subtler zoom
+pan_x = 0.02 * math.sin(2 * math.pi * progress * 4)          # Reduce 0.02 for less pan
+rotation = 1.0 * math.sin(2 * math.pi * progress * 2)         # Reduce 1.0 for less rotation
 ```
 
-### Timing Adjustments
-Fine-tune lyric timing:
+## 📊 Performance Optimization
+
+### GPU Acceleration
+
+The system automatically uses CUDA when available:
 
 ```python
-# Faster lyric changes
-total_lyric_time = duration * 0.6  # 60% of duration for lyrics
-
-# Slower lyric changes
-total_lyric_time = duration * 0.9  # 90% of duration for lyrics
+# CUDA detection and usage
+if torch.cuda.is_available():
+    print(f"Using CUDA: {torch.cuda.get_device_name()}")
+else:
+    print("CUDA not available, using CPU")
 ```
 
-## Output Options
+### Memory Management
 
-### File Formats
-The script generates MP4 files with:
-- **Video**: H.264 codec, 30 FPS
-- **Audio**: AAC codec, original quality
-- **Container**: MP4 format
+- Efficient Whisper model loading with caching
+- Optimized text matching with progress tracking
+- Smart frame generation with memory management
 
-### Quality Settings
-- **High Quality**: Default settings (42MB for 232s video)
-- **Medium Quality**: Reduce FPS to 24 (smaller file)
-- **Low Quality**: Reduce FPS to 15 (smallest file)
-
-## Troubleshooting
+## 🐛 Troubleshooting
 
 ### Common Issues
 
-#### 1. "Image not found" Error
-- Check file path in script
-- Ensure image is in `context/` folder
-- Verify file extension is correct
-
-#### 2. "Audio not found" Error  
-- Check audio file path
-- Ensure MP3 file is in `context/` folder
-- Verify audio file is not corrupted
-
-#### 3. Slow Processing
-- Reduce image resolution
-- Lower FPS setting
-- Close other applications to free RAM
-
-#### 4. Large File Size
-- Reduce FPS from 30 to 24 or 15
-- Compress input image
-- Use shorter audio clips
+1. **Triton Kernel Warnings**: Automatically suppressed, normal on Windows
+2. **Text Extraction Errors**: Check MP3 file format and audio quality
+3. **Memory Issues**: Use smaller Whisper model or reduce audio duration
+4. **Missing Lyrics**: Ensure all lyrics are displayed with sequential timing
+5. **Faiss Import Errors**: Install faiss-cpu or faiss-gpu
 
 ### Performance Tips
 
-1. **Optimize Images**: Use compressed JPG files
-2. **Manage RAM**: Close other applications during processing
-3. **Batch Processing**: Process multiple files overnight
-4. **Quality vs Speed**: Balance FPS with file size needs
+- Use "base" Whisper model for balanced speed/accuracy
+- Reduce image resolution for quicker generation
+- Close other applications to free up GPU memory
 
-## Examples
+## 📈 Output Quality
 
-### Basic Usage
-```bash
-# 1. Place files
-cp my_image.jpg context/
-cp my_song.mp3 context/
+The system generates professional-quality videos with:
 
-# 2. Edit lyrics in script
-# 3. Run
-python smooth_video_generator.py
+- **Accurate Text Extraction**: AI determines what's actually spoken
+- **Perfect Synchronization**: Text appears exactly when spoken
+- **Complete Coverage**: All lyrics displayed from start to finish
+- **Smooth Animation**: Multi-frequency transformations create natural movement
+- **High Resolution**: 1024x1024 output with crisp text rendering
+- **Professional Audio**: Maintains original audio quality
 
-# 4. Check output
-ls context/*.mp4
-```
+## 🎵 Example Results
 
-### Custom Configuration
-```python
-# Modify script for custom settings
-lyrics = ["Custom", "Lyrics", "Here"]
-fps = 24  # Lower FPS for smaller files
-zoom_variation = 0.2  # Gentler zoom
-```
+Generated videos feature:
+- Text extracted directly from audio using AI
+- Provided lyrics used to polish and refine extracted text
+- Perfect synchronization between spoken words and displayed text
+- All lyrics displayed from start to finish
+- Smooth image movement synchronized to music rhythm
+- Professional fade effects for text transitions
 
-## Best Practices
-
-1. **Test First**: Use short audio clips for testing
-2. **Backup Files**: Keep original files safe
-3. **Monitor Progress**: Watch console output for issues
-4. **Quality Check**: Review output videos before batch processing
-5. **File Management**: Organize input/output files properly
+This approach combines the best of AI automation with human-curated content for optimal results.
