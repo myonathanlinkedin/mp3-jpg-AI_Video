@@ -1,79 +1,82 @@
-# AI Video Generator
+# Simple MP3 + Image + Lyrics Video Generator
 
-A dynamic AI video generator that automatically detects hardware capabilities and adapts model selection and processing parameters accordingly.
+A simple Python script to create smooth animated videos by combining MP3 audio with moving images and synchronized lyrics.
 
 ## Features
 
-- **Dynamic Hardware Detection**: Automatically detects GPU, CPU, RAM capabilities
-- **Adaptive Model Selection**: Chooses optimal AI model based on hardware tier
-- **True AI Animation**: Generates natural video movement from static images
-- **Multi-tier Support**: Ultra, High, Medium, Low hardware tiers
-- **Local Processing**: No cloud dependency for true AI animation
-- **Ken Burns Fallback**: Traditional animation effects when AI models unavailable
+- **Smooth Image Animation**: Multiple frequency movements with zoom, pan, and subtle rotation
+- **Synchronized Lyrics**: Text appears and fades with precise timing
+- **High Quality Output**: 30 FPS video with AAC audio
+- **Easy to Use**: Simple script with minimal dependencies
 
-## Quick Start
+## Requirements
+
+- Python 3.8+
+- PIL/Pillow
+- MoviePy
+- librosa
+- numpy
+
+## Installation
 
 ```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Run basic example
-python examples/basic_usage.py
-```
-
-## Hardware Tiers
-
-- **Ultra**: RTX 4090 Mobile (16GB VRAM) - All models, maximum quality
-- **High**: RTX 4080/3080 (10-16GB VRAM) - High quality models
-- **Medium**: RTX 3060/4060 (8-12GB VRAM) - Medium quality models  
-- **Low**: Integrated Graphics/CPU - Basic animation effects
-
-## Supported Models
-
-- **Stable Video Diffusion XL**: Highest quality AI animation (requires authentication)
-- **Stable Video Diffusion**: High quality AI animation (requires authentication)
-- **AnimateDiff**: Creative AI animation (requires authentication)
-- **Ken Burns Effect**: Traditional animation fallback (always available)
-
-## Project Structure
-
-```
-ai_video_generator/
-├── README.md
-├── requirements.txt
-├── PROJECT_STRUCTURE.md
-├── core/
-│   ├── __init__.py
-│   ├── hardware_detector.py      # GPU/CPU/RAM detection
-│   ├── model_manager.py          # Dynamic model loading
-│   ├── video_generator.py        # Main video generation
-│   ├── audio_processor.py        # Audio processing utilities
-│   ├── base_model.py            # Base model interface
-│   └── ken_burns.py             # Ken Burns effect implementation
-├── examples/
-│   ├── __init__.py
-│   └── basic_usage.py           # Basic usage example
-└── context/
-    ├── rapper.jpg               # Input image
-    └── Title _ Judul_Black Chains _ Rantai Hi_cmp.mp3  # Input audio
+pip install moviepy pillow librosa numpy
 ```
 
 ## Usage
 
-```python
-from core.video_generator import VideoGenerator
+1. Place your image and MP3 file in the `context/` folder
+2. Edit the lyrics in `smooth_video_generator.py`
+3. Run the script:
 
-# Auto-detect hardware and initialize
-generator = VideoGenerator()
-
-# Generate video
-output_path = generator.generate_video(
-    image_path="context/rapper.jpg",
-    audio_path="context/Title _ Judul_Black Chains _ Rantai Hi_cmp.mp3",
-    output_path="context/generated_video.mp4"
-)
+```bash
+python smooth_video_generator.py
 ```
+
+## File Structure
+
+```
+generatevideofromaudioimage/
+├── context/
+│   ├── rapper.jpg                           # Input image
+│   ├── Title _ Judul_Black Chains _ Rantai Hi_cmp.mp3  # Input audio
+│   ├── simple_video_with_lyrics.mp4         # Basic output
+│   └── smooth_video_with_lyrics.mp4         # Smooth output
+├── smooth_video_generator.py                # Main script
+├── .gitignore                               # Git ignore file
+├── PROJECT_STRUCTURE.md                     # Project documentation
+└── README.md                                # This file
+```
+
+## How It Works
+
+1. **Image Processing**: Creates smooth moving frames with multiple animation effects
+2. **Lyric Synchronization**: Calculates precise timing for each lyric line
+3. **Video Generation**: Combines frames with audio using MoviePy
+4. **Output**: Creates high-quality MP4 video with synchronized lyrics
+
+## Animation Effects
+
+- **Zoom**: Smooth zoom in/out with easing
+- **Pan**: Natural left/right and up/down movement
+- **Rotation**: Subtle rotation (max 2 degrees)
+- **Multiple Frequencies**: Combines different movement patterns for natural motion
+
+## Customization
+
+- Edit `lyrics` list in the script to change text
+- Modify animation parameters in `_create_smooth_frames_with_lyrics()`
+- Adjust font size, position, and colors for text
+- Change FPS and video quality settings
+
+## Output
+
+The script generates a smooth MP4 video with:
+- Moving background image
+- Synchronized lyrics at the bottom
+- High-quality audio integration
+- Professional-looking transitions
 
 ## License
 
-MIT License
+This project is open source and available under the MIT License.
