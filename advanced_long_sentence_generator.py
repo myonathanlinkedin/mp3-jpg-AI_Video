@@ -286,6 +286,71 @@ class AdvancedLongSentenceLyricSyncGenerator:
         self.logger.info(f"Multi-scale Faiss index built with {len(text_chunks)} chunks (small: {small_chunk_size}, medium: {medium_chunk_size}, large: {large_chunk_size})")
         return text_chunks, chunk_timings
 
+    def _calculate_text_similarity(self, text1, text2):
+        """Hitung similarity antara dua text dengan fuzzy matching"""
+        # Normalize text
+        t1 = text1.lower().strip()
+        t2 = text2.lower().strip()
+        
+        # Exact match
+        if t1 == t2:
+            return 1.0
+        
+        # Check substring match (high similarity)
+        if t1 in t2 or t2 in t1:
+            return 0.95
+        
+        # Word overlap ratio
+        words1 = set(t1.split())
+        words2 = set(t2.split())
+        if not words1 or not words2:
+            return 0.0
+        
+        intersection = words1.intersection(words2)
+        union = words1.union(words2)
+        word_overlap = len(intersection) / len(union) if union else 0.0
+        
+        # Character similarity (fuzzy)
+        char_similarity = SequenceMatcher(None, t1, t2).ratio()
+        
+        # Combined score (word overlap lebih penting)
+        return (word_overlap * 0.7) + (char_similarity * 0.3)
+
+    def _exact_word_match(self, lyric_text, extracted_words):
+        """Cari exact word match dalam extracted words untuk akurasi maksimal"""
+        lyric_words = [w.lower().strip() for w in lyric_text.split()]
+        if not lyric_words:
+            return None
+        
+        # Cari sequence words yang match
+        best_match = None
+        best_score = 0
+        
+        # Sliding window untuk mencari sequence
+        for i in range(len(extracted_words) - len(lyric_words) + 1):
+            window = extracted_words[i:i+len(lyric_words)]
+            window_text = " ".join([w['word'].lower().strip() for w in window])
+            lyric_text_lower = " ".join(lyric_words)
+            
+            # Hitung similarity
+            similarity = self._calculate_text_similarity(lyric_text_lower, window_text)
+            
+            if similarity > best_score:
+                best_score = similarity
+                # Jika similarity tinggi (>0.7), gunakan timing dari extracted words
+                if similarity > 0.7:
+                    start_time = window[0]['start']
+                    end_time = window[-1]['end']
+                    best_match = {
+                        'start': start_time,
+                        'end': end_time,
+                        'similarity': similarity,
+                        'method': 'exact_word_match',
+                        'words': window
+                    }
+        
+        return best_match
+
     def _multi_scale_semantic_search(self, lyric_text, text_chunks, chunk_timings, top_k=25):
         """Multi-scale semantic search untuk menangkap kalimat panjang"""
         lyric_language = self._detect_language(lyric_text)
@@ -302,9 +367,20 @@ class AdvancedLongSentenceLyricSyncGenerator:
                 chunk_language = chunk_timings[idx]['language']
                 chunk_scale = chunk_timings[idx]['scale']
                 chunk_word_count = chunk_timings[idx]['word_count']
+                chunk_text = text_chunks[idx].lower().strip()
+                lyric_text_lower = lyric_text.lower().strip()
+                
+                # Tambahkan fuzzy text similarity untuk meningkatkan akurasi
+                fuzzy_sim = self._calculate_text_similarity(lyric_text_lower, chunk_text)
                 
                 # Boost similarity berdasarkan berbagai faktor
                 adjusted_similarity = similarity
+                
+                # 0. Fuzzy text matching boost (sangat penting)
+                if fuzzy_sim > 0.8:
+                    adjusted_similarity = max(adjusted_similarity, fuzzy_sim * 1.5)
+                elif fuzzy_sim > 0.6:
+                    adjusted_similarity = max(adjusted_similarity, fuzzy_sim * 1.2)
                 
                 # 1. Language match boost
                 if lyric_language == chunk_language:
@@ -332,6 +408,7 @@ class AdvancedLongSentenceLyricSyncGenerator:
                 best_matches.append({
                     'similarity': float(adjusted_similarity),
                     'original_similarity': float(similarity),
+                    'fuzzy_similarity': fuzzy_sim,
                     'text': text_chunks[idx],
                     'timing': chunk_timings[idx],
                     'language_match': lyric_language == chunk_language,
@@ -342,6 +419,214 @@ class AdvancedLongSentenceLyricSyncGenerator:
         
         return best_matches
 
+    def _phonetic_similarity(self, word1, word2):
+        """Hitung phonetic similarity menggunakan simple phonetic algorithm"""
+        def simple_phonetic(word):
+            """Simple phonetic representation (Soundex-like)"""
+            if not word:
+                return ""
+            word = str(word).lower().strip()
+            if not word:
+                return ""
+            
+            # Remove common suffixes
+            word = re.sub(r'(ng|nya|mu|ku|lah|kah|pun)$', '', word)
+            
+            if not word:
+                return ""
+            
+            # Convert to phonetic code
+            phonetic = word[0]  # Keep first letter
+            for char in word[1:]:
+                if char in 'aeiouy':
+                    phonetic += '0'  # Vowels
+                elif char in 'bp':
+                    phonetic += '1'
+                elif char in 'ckq':
+                    phonetic += '2'
+                elif char in 'dt':
+                    phonetic += '3'
+                elif char in 'fg':
+                    phonetic += '4'
+                elif char in 'hj':
+                    phonetic += '5'
+                elif char in 'lm':
+                    phonetic += '6'
+                elif char in 'nr':
+                    phonetic += '7'
+                elif char in 'sx':
+                    phonetic += '8'
+                elif char in 'wz':
+                    phonetic += '9'
+                else:
+                    phonetic += char
+            return phonetic
+        
+        ph1 = simple_phonetic(word1)
+        ph2 = simple_phonetic(word2)
+        
+        # Exact phonetic match
+        if ph1 == ph2:
+            return 1.0
+        
+        # Character similarity on phonetic codes
+        if not ph1 or not ph2:
+            return 0.0
+        
+        similarity = SequenceMatcher(None, ph1, ph2).ratio()
+        return similarity
+    
+    def _hierarchical_forced_alignment(self, lyric_text, extracted_words):
+        """Forced alignment dengan hierarchical approach: sentence -> phrase -> word"""
+        lyric_words = [w.lower().strip() for w in lyric_text.split()]
+        if not lyric_words:
+            return None
+        
+        # Step 1: Find sentence-level match using sliding window
+        # Try different window sizes for better matching
+        min_window = max(1, len(lyric_words) - 2)
+        max_window = min(len(extracted_words), len(lyric_words) + 5)
+        
+        best_match = None
+        best_score = 0.0
+        
+        # Sliding window dengan berbagai ukuran
+        for window_size in range(min_window, max_window + 1):
+            for i in range(len(extracted_words) - window_size + 1):
+                window = extracted_words[i:i+window_size]
+                window_text = " ".join([w['word'].lower().strip() for w in window])
+                lyric_text_lower = " ".join(lyric_words)
+                
+                # Calculate multiple similarity metrics
+                # 1. Text similarity
+                text_sim = self._calculate_text_similarity(lyric_text_lower, window_text)
+                
+                # 2. Phonetic similarity (word by word)
+                phonetic_sims = []
+                for j, lyric_word in enumerate(lyric_words):
+                    if j < len(window):
+                        phonetic_sims.append(self._phonetic_similarity(lyric_word, window[j]['word']))
+                
+                avg_phonetic_sim = sum(phonetic_sims) / len(phonetic_sims) if phonetic_sims else 0
+                
+                # 3. Word overlap
+                lyric_words_set = set(lyric_words)
+                window_words_set = set([w['word'].lower().strip() for w in window])
+                overlap = len(lyric_words_set.intersection(window_words_set))
+                word_overlap_ratio = overlap / max(len(lyric_words_set), len(window_words_set)) if (lyric_words_set or window_words_set) else 0
+                
+                # 4. Position similarity (favor matches that are in sequence)
+                position_penalty = 0
+                if len(window) == len(lyric_words):
+                    # Check if words are in similar relative positions
+                    for j, lyric_word in enumerate(lyric_words):
+                        if j < len(window):
+                            ph_sim = self._phonetic_similarity(lyric_word, window[j]['word'])
+                            if ph_sim > 0.6:
+                                position_penalty += 0.1
+                    position_penalty = min(position_penalty / len(lyric_words), 0.3)
+                
+                # Combined score dengan weights
+                combined_score = (
+                    text_sim * 0.4 +           # Text similarity
+                    avg_phonetic_sim * 0.3 +    # Phonetic similarity
+                    word_overlap_ratio * 0.2 + # Word overlap
+                    position_penalty           # Position bonus
+                )
+                
+                # Boost score jika ada banyak matches
+                if word_overlap_ratio > 0.5 and avg_phonetic_sim > 0.6:
+                    combined_score *= 1.2
+                
+                if combined_score > best_score:
+                    best_score = combined_score
+                    start_time = window[0]['start']
+                    end_time = window[-1]['end']
+                    best_match = {
+                        'start': start_time,
+                        'end': end_time,
+                        'similarity': combined_score,
+                        'text_similarity': text_sim,
+                        'phonetic_similarity': avg_phonetic_sim,
+                        'word_overlap': word_overlap_ratio,
+                        'method': 'hierarchical_forced_alignment',
+                        'words': window
+                    }
+        
+        return best_match if best_score > 0.5 else None  # Lower threshold untuk forced alignment
+    
+    def _sliding_window_forced_match(self, lyric_text, extracted_words, start_search_time=0, end_search_time=None):
+        """Sliding window forced matching dengan DTW-like approach"""
+        lyric_words = [w.lower().strip() for w in lyric_text.split()]
+        if not lyric_words or not extracted_words:
+            return None
+        
+        # Filter extracted words by time range
+        filtered_words = [w for w in extracted_words if w['start'] >= start_search_time]
+        if end_search_time:
+            filtered_words = [w for w in filtered_words if w['start'] <= end_search_time]
+        
+        if len(filtered_words) < len(lyric_words):
+            # If not enough words, use all available words with padding
+            filtered_words = extracted_words
+        
+        if not filtered_words:
+            return None
+        
+        best_match = None
+        best_score = 0.0
+        
+        # Try multiple window sizes around the expected length
+        for offset in range(-3, 4):  # Allow -3 to +3 word difference
+            window_size = len(lyric_words) + offset
+            if window_size < 1 or window_size > len(filtered_words):
+                continue
+            
+            for i in range(len(filtered_words) - window_size + 1):
+                window = filtered_words[i:i+window_size]
+                window_text = " ".join([w['word'].lower().strip() for w in window])
+                lyric_text_lower = " ".join(lyric_words)
+                
+                # Calculate similarity
+                text_sim = self._calculate_text_similarity(lyric_text_lower, window_text)
+                
+                # Phonetic matching for individual words
+                phonetic_matches = 0
+                for j, lyric_word in enumerate(lyric_words):
+                    # Try to match with nearby words in window
+                    search_range = min(3, len(window) - j)
+                    for k in range(search_range):
+                        if j + k < len(window):
+                            ph_sim = self._phonetic_similarity(lyric_word, window[j+k]['word'])
+                            if ph_sim > 0.6:
+                                phonetic_matches += 1
+                                break
+                
+                phonetic_ratio = phonetic_matches / len(lyric_words) if lyric_words else 0
+                
+                # Combined score
+                combined_score = text_sim * 0.6 + phonetic_ratio * 0.4
+                
+                # Boost jika ada banyak phonetic matches
+                if phonetic_ratio > 0.7:
+                    combined_score *= 1.3
+                
+                if combined_score > best_score:
+                    best_score = combined_score
+                    start_time = window[0]['start']
+                    end_time = window[-1]['end']
+                    best_match = {
+                        'start': start_time,
+                        'end': end_time,
+                        'similarity': combined_score,
+                        'text_similarity': text_sim,
+                        'phonetic_ratio': phonetic_ratio,
+                        'method': 'sliding_window_forced',
+                        'words': window
+                    }
+        
+        return best_match if best_score > 0.4 else None  # Lower threshold untuk forced alignment
+    
     def _calculate_adaptive_duration(self, lyric_text, timing, extracted_words):
         """Hitung durasi yang adaptif berdasarkan panjang kalimat dan konteks"""
         lyric_language = self._detect_language(lyric_text)
@@ -399,60 +684,152 @@ class AdvancedLongSentenceLyricSyncGenerator:
         # Match lyrics dengan multi-scale semantic search
         matched_indices = set()
         
+        # Track last matched time for sequential matching
+        last_matched_end = 0.0
+        
         for i, lyric_line in enumerate(lyrics):
             lyric_language = self._detect_language(lyric_line)
             word_count = len(lyric_line.split())
             self.logger.info(f"Processing lyric {i+1} ({lyric_language}, {word_count} words): '{lyric_line}'")
             
-            # Adaptive top_k berdasarkan panjang kalimat
-            top_k = 30 if word_count > 12 else 20 if word_count > 8 else 15
-            matches = self._multi_scale_semantic_search(lyric_line, text_chunks, chunk_timings, top_k=top_k)
+            matched = False
             
-            best_match = None
-            for match in matches:
-                # Adaptive threshold berdasarkan panjang kalimat
-                if word_count > 12:
-                    threshold = 0.15  # Very low threshold for very long sentences
-                elif word_count > 8:
-                    threshold = 0.2   # Low threshold for long sentences
-                else:
-                    threshold = 0.25  # Normal threshold for short sentences
-                
-                if match['similarity'] >= threshold:
-                    timing = match['timing']
-                    
-                    # Hitung durasi adaptif
-                    optimal_duration = self._calculate_adaptive_duration(lyric_line, timing, extracted_words)
-                    
-                    # Validasi durasi dengan range yang sangat luas
-                    min_duration = max(0.8, word_count * 0.15)
-                    max_duration = min(25.0, word_count * 1.0)
-                    
-                    if min_duration <= optimal_duration <= max_duration:
-                        best_match = match
-                        best_match['optimal_duration'] = optimal_duration
-                        break
-            
-            if best_match:
-                timing = best_match['timing']
-                optimal_duration = best_match['optimal_duration']
-                
-                # Adjust timing dengan durasi optimal
-                adjusted_end = timing['start'] + optimal_duration
-                
+            # STEP 1: Coba forced alignment dengan hierarchical approach (terbaik untuk missing lyrics)
+            forced_match = self._hierarchical_forced_alignment(lyric_line, extracted_words)
+            if forced_match and forced_match['similarity'] > 0.5:
+                # Use forced alignment result
                 matched_lyrics_with_timing.append({
                     'text': lyric_line,
-                    'start': timing['start'],
-                    'end': adjusted_end,
+                    'start': forced_match['start'],
+                    'end': forced_match['end'],
                     'language': lyric_language,
                     'word_count': word_count,
-                    'match_method': 'multi_scale_semantic',
-                    'similarity': best_match['similarity'],
-                    'language_match': best_match['language_match'],
-                    'scale_match': best_match['scale_match']
+                    'match_method': 'forced_alignment_hierarchical',
+                    'similarity': forced_match['similarity'],
+                    'phonetic_similarity': forced_match.get('phonetic_similarity', 0.0),
+                    'word_overlap': forced_match.get('word_overlap', 0.0)
                 })
                 matched_indices.add(i)
-                self.logger.info(f"✅ Multi-scale matched lyric {i+1} ({lyric_language}, {word_count} words, {best_match['scale_match']}): '{lyric_line}' from {timing['start']:.2f}s to {adjusted_end:.2f}s (similarity: {best_match['similarity']:.2f})")
+                matched = True
+                last_matched_end = max(last_matched_end, forced_match['end'])
+                self.logger.info(f"✅ Forced alignment matched lyric {i+1} ({lyric_language}, {word_count} words): '{lyric_line}' from {forced_match['start']:.2f}s to {forced_match['end']:.2f}s (sim: {forced_match['similarity']:.2f}, phonetic: {forced_match.get('phonetic_similarity', 0):.2f})")
+            
+            # STEP 2: Jika forced alignment gagal, coba sliding window forced match
+            if not matched:
+                # Search from last matched position forward
+                sliding_match = self._sliding_window_forced_match(lyric_line, extracted_words, start_search_time=max(0, last_matched_end - 2.0))
+                if sliding_match and sliding_match['similarity'] > 0.4:
+                    matched_lyrics_with_timing.append({
+                        'text': lyric_line,
+                        'start': sliding_match['start'],
+                        'end': sliding_match['end'],
+                        'language': lyric_language,
+                        'word_count': word_count,
+                        'match_method': 'forced_alignment_sliding',
+                        'similarity': sliding_match['similarity'],
+                        'phonetic_ratio': sliding_match.get('phonetic_ratio', 0.0)
+                    })
+                    matched_indices.add(i)
+                    matched = True
+                    last_matched_end = max(last_matched_end, sliding_match['end'])
+                    self.logger.info(f"✅ Sliding window forced match lyric {i+1} ({lyric_language}, {word_count} words): '{lyric_line}' from {sliding_match['start']:.2f}s to {sliding_match['end']:.2f}s (sim: {sliding_match['similarity']:.2f}, phonetic: {sliding_match.get('phonetic_ratio', 0):.2f})")
+            
+            # STEP 3: Coba exact word match (paling akurat tapi mungkin terlewat jika transcription salah)
+            if not matched:
+                exact_match = self._exact_word_match(lyric_line, extracted_words)
+                if exact_match and exact_match['similarity'] > 0.7:
+                    matched_lyrics_with_timing.append({
+                        'text': lyric_line,
+                        'start': exact_match['start'],
+                        'end': exact_match['end'],
+                        'language': lyric_language,
+                        'word_count': word_count,
+                        'match_method': 'exact_word_match',
+                        'similarity': exact_match['similarity']
+                    })
+                    matched_indices.add(i)
+                    matched = True
+                    last_matched_end = max(last_matched_end, exact_match['end'])
+                    self.logger.info(f"✅ Exact word matched lyric {i+1} ({lyric_language}, {word_count} words): '{lyric_line}' from {exact_match['start']:.2f}s to {exact_match['end']:.2f}s (similarity: {exact_match['similarity']:.2f})")
+            
+            # STEP 4: Jika semua forced alignment gagal, gunakan semantic search (fallback)
+            if not matched:
+                # Adaptive top_k berdasarkan panjang kalimat
+                top_k = 30 if word_count > 12 else 20 if word_count > 8 else 15
+                matches = self._multi_scale_semantic_search(lyric_line, text_chunks, chunk_timings, top_k=top_k)
+                
+                best_match = None
+                for match in matches:
+                    # Threshold yang lebih ketat untuk akurasi lebih baik
+                    # Prioritaskan fuzzy similarity yang tinggi
+                    fuzzy_sim = match.get('fuzzy_similarity', 0.0)
+                
+                    # Jika fuzzy similarity tinggi, gunakan threshold lebih rendah
+                    if fuzzy_sim > 0.7:
+                        threshold = 0.3  # Lebih ketat untuk fuzzy match yang baik
+                    elif word_count > 12:
+                        threshold = 0.4  # Lebih tinggi untuk very long sentences
+                    elif word_count > 8:
+                        threshold = 0.45  # Lebih tinggi untuk long sentences
+                    else:
+                        threshold = 0.5  # Lebih tinggi untuk short sentences
+                    
+                    # Prioritaskan match dengan fuzzy similarity tinggi
+                    combined_score = match['similarity']
+                    if fuzzy_sim > 0.7:
+                        combined_score = max(combined_score, fuzzy_sim * 1.3)
+                    
+                    if combined_score >= threshold:
+                        timing = match['timing']
+                        
+                        # Gunakan timing langsung dari extracted words jika memungkinkan
+                        # Hitung durasi berdasarkan actual word timings
+                        actual_duration = timing['end'] - timing['start']
+                        
+                        # Jika durasi terlalu pendek, perpanjang sedikit berdasarkan word count
+                        expected_duration = word_count * 0.4  # Estimasi per kata
+                        if actual_duration < expected_duration * 0.5:  # Durasi terlalu pendek
+                            optimal_duration = self._calculate_adaptive_duration(lyric_line, timing, extracted_words)
+                            # Gunakan maksimum antara actual dan calculated
+                            optimal_duration = max(actual_duration, optimal_duration)
+                        else:
+                            # Gunakan actual duration dengan sedikit margin
+                            optimal_duration = actual_duration * 1.1  # Tambah 10% margin
+                        
+                        # Validasi durasi dengan range yang wajar
+                        min_duration = max(0.5, word_count * 0.2)
+                        max_duration = min(15.0, word_count * 0.7)
+                        
+                        if min_duration <= optimal_duration <= max_duration:
+                            best_match = match
+                            best_match['optimal_duration'] = optimal_duration
+                            break
+                
+                if best_match:
+                    timing = best_match['timing']
+                    optimal_duration = best_match['optimal_duration']
+                    fuzzy_sim = best_match.get('fuzzy_similarity', 0.0)
+                    
+                    # Adjust timing dengan durasi optimal
+                    adjusted_end = timing['start'] + optimal_duration
+                    
+                    matched_lyrics_with_timing.append({
+                        'text': lyric_line,
+                        'start': timing['start'],
+                        'end': adjusted_end,
+                        'language': lyric_language,
+                        'word_count': word_count,
+                        'match_method': 'multi_scale_semantic',
+                        'similarity': best_match['similarity'],
+                        'fuzzy_similarity': fuzzy_sim,
+                        'language_match': best_match['language_match'],
+                        'scale_match': best_match['scale_match']
+                    })
+                    matched_indices.add(i)
+                    matched = True
+                    last_matched_end = max(last_matched_end, adjusted_end)
+                    match_info = f"fuzzy:{fuzzy_sim:.2f}" if fuzzy_sim > 0 else f"similarity:{best_match['similarity']:.2f}"
+                    self.logger.info(f"✅ Multi-scale matched lyric {i+1} ({lyric_language}, {word_count} words, {best_match['scale_match']}): '{lyric_line}' from {timing['start']:.2f}s to {adjusted_end:.2f}s ({match_info})")
         
         # Enhanced fallback untuk lyrics yang belum match
         unmatched_lyrics = []
@@ -516,6 +893,8 @@ class AdvancedLongSentenceLyricSyncGenerator:
                     f.write(f"  Match Method: {lyric_entry['match_method']}\n")
                     if 'similarity' in lyric_entry:
                         f.write(f"  Similarity: {lyric_entry['similarity']:.2f}\n")
+                    if 'fuzzy_similarity' in lyric_entry:
+                        f.write(f"  Fuzzy Similarity: {lyric_entry['fuzzy_similarity']:.2f}\n")
                     if 'scale_match' in lyric_entry:
                         f.write(f"  Scale Match: {lyric_entry['scale_match']}\n")
                     f.write("\n")
@@ -590,6 +969,46 @@ class AdvancedLongSentenceLyricSyncGenerator:
             self.logger.info(f"✅ Final timing for lyric {i+1} ({language}, {word_count} words, {match_method}): '{lyric_entry['text']}' from {lyric_entry['start']:.2f}s to {lyric_entry['end']:.2f}s")
         
         return lyric_data
+
+    def _wrap_text(self, text, max_chars_per_line, font, max_width):
+        """Wrap text ke beberapa baris berdasarkan max characters dan lebar layar"""
+        words = text.split()
+        lines = []
+        current_line = []
+        
+        # Buat dummy image untuk mengukur lebar teks
+        dummy_img = Image.new('RGB', (100, 100))
+        dummy_draw = ImageDraw.Draw(dummy_img)
+        
+        for word in words:
+            # Cek panjang word jika ditambahkan ke current line
+            test_line = ' '.join(current_line + [word])
+            
+            # Test lebar aktual dengan font
+            try:
+                bbox = dummy_draw.textbbox((0, 0), test_line, font=font)
+                test_width = bbox[2] - bbox[0]
+            except:
+                # Fallback ke estimasi karakter (asumsi rata-rata 10 pixel per karakter)
+                test_width = len(test_line) * 10
+            
+            # Cek apakah perlu wrap: berdasarkan panjang karakter atau lebar pixel
+            char_limit = len(test_line) > max_chars_per_line
+            width_limit = test_width > max_width
+            
+            if (char_limit or width_limit) and current_line:
+                # Simpan current line dan mulai baris baru
+                lines.append(' '.join(current_line))
+                current_line = [word]
+            else:
+                # Tambahkan word ke current line
+                current_line.append(word)
+        
+        # Tambahkan baris terakhir jika ada
+        if current_line:
+            lines.append(' '.join(current_line))
+        
+        return lines if lines else [text]
 
     def _fallback_timing(self, lyrics, duration):
         """Fallback timing jika AI matching gagal"""
@@ -675,13 +1094,27 @@ class AdvancedLongSentenceLyricSyncGenerator:
                     
                     if current_lyric_text:
                         draw = ImageDraw.Draw(rotated_image)
-                        bbox = draw.textbbox((0, 0), current_lyric_text, font=font)
-                        text_width = bbox[2] - bbox[0]
-                        text_height = bbox[3] - bbox[1]
                         
-                        # Position text at bottom center
-                        text_x = (width - text_width) // 2
-                        text_y = height - text_height - 150
+                        # Wrap text function - maksimum 50 karakter per baris
+                        max_chars_per_line = 50
+                        wrapped_lines = self._wrap_text(current_lyric_text, max_chars_per_line, font, width - 100)
+                        
+                        # Calculate total text height for multi-line text
+                        # Ukur tinggi aktual dari satu baris teks
+                        test_bbox = draw.textbbox((0, 0), "Test", font=font)
+                        single_line_height = test_bbox[3] - test_bbox[1]
+                        line_height = single_line_height + 10  # Spacing antar baris
+                        total_text_height = len(wrapped_lines) * line_height
+                        
+                        # Position text lebih ke bawah untuk menghindari overlap dengan kontrol video
+                        # 250 pixels dari bawah untuk memberikan ruang yang cukup
+                        bottom_margin = 250
+                        text_y = height - bottom_margin - total_text_height
+                        
+                        # Pastikan teks tidak terpotong di atas (minimal 20 pixels dari atas)
+                        min_y = 20
+                        if text_y < min_y:
+                            text_y = min_y
                         
                         # Adaptive fade effect berdasarkan panjang kalimat
                         word_count = len(current_lyric_text.split())
@@ -709,12 +1142,20 @@ class AdvancedLongSentenceLyricSyncGenerator:
                         else:
                             text_color = (255, 255, 255, alpha_int)  # White for mixed/unknown
                         
-                        # Draw text with stroke
-                        draw.text((text_x, text_y), current_lyric_text, 
-                                 font=font, 
-                                 fill=text_color, 
-                                 stroke_fill=(0, 0, 0, alpha_int), 
-                                 stroke_width=2)
+                        # Draw multi-line text dengan proper centering
+                        for line_num, line in enumerate(wrapped_lines):
+                            bbox = draw.textbbox((0, 0), line, font=font)
+                            line_width = bbox[2] - bbox[0]
+                            text_x = (width - line_width) // 2
+                            
+                            current_y = text_y + (line_num * line_height)
+                            
+                            # Draw text with stroke untuk setiap baris
+                            draw.text((text_x, current_y), line, 
+                                     font=font, 
+                                     fill=text_color, 
+                                     stroke_fill=(0, 0, 0, alpha_int), 
+                                     stroke_width=2)
 
                 frames.append(rotated_image)
             
@@ -808,8 +1249,8 @@ class AdvancedLongSentenceLyricSyncGenerator:
 
 
 if __name__ == "__main__":
-    image_file = "context/rapper.jpg"
-    audio_file = "context/Title _ Judul_Black Chains _ Rantai Hi_cmp.mp3"
+    image_file = "context/chat.jpg"
+    audio_file = "context/Chatmu Kayak Janji Negara.mp3"
     output_video_file = "context/advanced_long_sentence_video.mp4"
 
     generator = AdvancedLongSentenceLyricSyncGenerator(image_file, audio_file, output_video_file)

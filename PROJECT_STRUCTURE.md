@@ -32,11 +32,16 @@ The primary script that orchestrates the entire advanced video generation proces
 - `__init__()`: Initialize the generator with file paths and analysis file paths
 - `_get_audio_duration()`: Extract audio duration using librosa
 - `_detect_language()`: Detect English vs Indonesian lyrics
-- `_extract_text_from_audio()`: Enhanced AI text extraction using Whisper with optimized segmentation
-- `_build_multi_scale_faiss_index()`: Build Faiss index with small, medium, and large chunks
-- `_multi_scale_semantic_search()`: Multi-scale semantic search with adaptive thresholds
+- `_extract_text_from_audio()`: AI text extraction using Whisper for word boundary detection
+- `_phonetic_similarity()`: Calculate phonetic similarity using Soundex-like algorithm
+- `_hierarchical_forced_alignment()`: Forced alignment with hierarchical matching (sentence → phrase → word)
+- `_sliding_window_forced_match()`: DTW-like sliding window forced matching with multiple window sizes
+- `_exact_word_match()`: Exact word matching for high-confidence matches
+- `_calculate_text_similarity()`: Text similarity calculation with fuzzy matching
+- `_build_multi_scale_faiss_index()`: Build Faiss index with small, medium, and large chunks (fallback)
+- `_multi_scale_semantic_search()`: Multi-scale semantic search with adaptive thresholds (fallback)
 - `_calculate_adaptive_duration()`: Calculate optimal duration based on language and vocal characteristics
-- `_match_lyrics_advanced()`: Advanced lyric matching with multi-scale approach
+- `_match_lyrics_advanced()`: Advanced lyric matching with forced alignment as primary method
 - `_save_matched_lyrics()`: Save detailed matching results to file
 - `_validate_and_fix_advanced_timing()`: Advanced timing validation with language awareness
 - `_fallback_timing()`: Enhanced fallback timing for unmatched lyrics
@@ -55,32 +60,37 @@ The primary script that orchestrates the entire advanced video generation proces
 
 ## 🔧 Technical Architecture
 
-### AI Text Extraction Pipeline
+### AI Text Extraction & Forced Alignment Pipeline
 
 1. **Whisper Model Loading**
    - Loads "base" model for balanced speed/accuracy
    - Supports CUDA acceleration when available
    - Caches model for multiple uses
 
-2. **Audio Processing with Speaker Detection**
-   - Transcribes audio with word-level timestamps
-   - Extracts spoken text with precise timing
-   - Detects speaker changes based on audio characteristics
+2. **Audio Processing for Word Boundaries**
+   - Transcribes audio with word-level timestamps (for boundary detection, not exact transcription)
+   - Extracts word boundaries with precise timing
    - Handles multiple languages (detected automatically)
 
-3. **Multiple Speaker Analysis**
-   - Detects overlapping voices and simultaneous speakers
-   - Groups speakers by overlap patterns
-   - Analyzes song structure (verses, choruses, bridges, outros)
-   - Groups lyrics by song structure with speaker attribution
+3. **Forced Alignment (Primary Method)**
+   - **Hierarchical Forced Alignment**: 
+     - Sentence-level matching using sliding windows
+     - Phrase-level matching within sentences
+     - Word-level phonetic matching
+   - **Phonetic Similarity**: Uses Soundex-like algorithm to match words that sound similar
+   - **Multiple Metrics**: Combines text similarity, phonetic similarity, word overlap, and position bonus
+   - **Lower Thresholds**: Uses 0.5 threshold for hierarchical, 0.4 for sliding window (more lenient than semantic search)
+   
+4. **Sliding Window DTW-like Approach**
+   - Multiple window sizes (±3 words) for flexible matching
+   - Tracks last matched position for sequential matching
+   - Phonetic matching for individual words within windows
 
-4. **Faiss Semantic Search with Multiple Speakers**
-   - Builds Faiss index with Sentence Transformers embeddings
-   - Creates text chunks from extracted words with speaker info
-   - Performs semantic search for each lyric group
+5. **Fallback Methods**
+   - **Exact Word Match**: High-confidence exact matching
+   - **Faiss Semantic Search**: Multi-scale semantic search with small, medium, and large chunks
    - Maps timing from AI extraction to provided lyrics
-   - Handles overlapping voices with appropriate timing rules
-   - Ensures sequential timing for complete coverage across all speakers
+   - Ensures sequential timing for complete coverage
 
 ### Video Generation Pipeline
 

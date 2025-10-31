@@ -4,19 +4,23 @@ This guide explains how to use the advanced AI-powered lyric synchronization sys
 
 ## 🎯 Final Approach Overview
 
-**Multi-Scale AI Text Extraction + Advanced Semantic Matching + Long Sentence Optimization**: The system uses OpenAI Whisper with enhanced segmentation to extract text from audio, then employs multi-scale Faiss-powered semantic search with adaptive language detection for intelligent lyric matching, especially optimized for long sentences that were previously missed.
+**Forced Alignment + Hierarchical Matching + Phonetic Similarity**: The system uses OpenAI Whisper for word boundary detection, then employs forced alignment with hierarchical matching (sentence → phrase → word) and phonetic similarity algorithms to match known lyrics directly with audio, even when transcription errors occur. This approach is based on state-of-the-art research and significantly improves lyric matching accuracy.
 
 ### Core Workflow
 
-1. **Enhanced AI Text Extraction** → OpenAI Whisper extracts text with enhanced segmentation for long sentences
-2. **Multi-Scale Index Building** → Creates Faiss index with small, medium, and large chunks
-3. **Adaptive Language Detection** → Automatically detects English vs Indonesian lyrics
-4. **Multi-Scale Semantic Search** → Uses multiple scales for comprehensive matching
-5. **Advanced Matching Algorithm** → Adaptive thresholds and similarity boosting
-6. **Adaptive Duration Calculation** → Intelligent timing based on language and vocal characteristics
-7. **File-Based Processing** → Reads lyrics from external files and saves detailed results
-8. **Advanced Timing Validation** → Language-aware overlap resolution
-9. **Video Generation** → Create smooth animated video with color-coded lyrics
+1. **AI Text Extraction** → OpenAI Whisper extracts word-level timestamps (for boundary detection, not exact transcription)
+2. **Forced Alignment (Primary)** → Hierarchical matching with phonetic similarity:
+   - Sentence-level matching using sliding windows
+   - Phrase-level matching within sentences
+   - Word-level phonetic matching (Soundex-like algorithm)
+3. **Sliding Window DTW-like Approach** → Multiple window sizes (±3 words) for flexible matching
+4. **Sequential Matching** → Tracks last matched position to maintain proper lyric order
+5. **Fallback Methods** → Exact word match and multi-scale semantic search as fallback
+6. **Adaptive Language Detection** → Automatically detects English vs Indonesian lyrics
+7. **Adaptive Duration Calculation** → Intelligent timing based on language and vocal characteristics
+8. **File-Based Processing** → Reads lyrics from external files and saves detailed results
+9. **Advanced Timing Validation** → Language-aware overlap resolution
+10. **Video Generation** → Create smooth animated video with color-coded lyrics
 
 ## 🚀 Basic Usage
 

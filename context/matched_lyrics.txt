@@ -1,580 +1,308 @@
 === ADVANCED MATCHED LYRICS RESULT ===
-Total matched lyrics: 64
+Total matched lyrics: 37
 ============================================================
 
 Lyric 1:
-  Text: Behind the glass towers, money flows in silence
-  Timing: 11.68s - 14.37s
+  Text: Yeah...
+  Timing: 0.00s - 0.50s
   Language: english
-  Word Count: 8
-  Match Method: multi_scale_semantic
-  Similarity: 1.59
-  Scale Match: medium
+  Word Count: 1
+  Match Method: enhanced_fallback
 
 Lyric 2:
-  Text: Money fills the pockets, morals vanish somewhere
-  Timing: 12.62s - 14.97s
+  Text: Chatmu datang kayak rapat paripurna — molor tapi rame janji.
+  Timing: 2.70s - 8.16s
   Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 0.80
-  Scale Match: small
+  Word Count: 10
+  Match Method: forced_alignment_sliding
+  Similarity: 0.50
 
 Lyric 3:
-  Text: Di balik gedung kaca, uang diam-diam mengalir
-  Timing: 15.22s - 18.02s
-  Language: indonesian
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.08
-  Scale Match: small
+  Text: Katamu cinta, tapi delay terus,
+  Timing: 10.74s - 12.72s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_sliding
+  Similarity: 0.79
 
 Lyric 4:
-  Text: Promises to the people sold, conscience ignored
-  Timing: 16.82s - 19.17s
+  Text: Aku udah sabar, tapi sabar pun bisa minus.
+  Timing: 11.96s - 15.18s
   Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.02
-  Scale Match: small
+  Word Count: 8
+  Match Method: forced_alignment_sliding
+  Similarity: 0.43
 
 Lyric 5:
-  Text: Janji rakyat dijual, suara nurani dikaburkan
-  Timing: 20.32s - 23.32s
-  Language: indonesian
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.15
-  Scale Match: small
+  Text: Story-mu aktif, tapi chatku nganggur,
+  Timing: 16.68s - 17.16s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_sliding
+  Similarity: 0.57
 
 Lyric 6:
-  Text: Tight structures, broken systems, yet they laugh
-  Timing: 22.60s - 24.95s
-  Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.05
-  Scale Match: small
+  Text: Janji bahagia, tapi draft-nya belum dikunjur.
+  Timing: 17.92s - 20.00s
+  Language: indonesian
+  Word Count: 6
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.66
 
 Lyric 7:
-  Text: Structured corruption, a culture made real
-  Timing: 27.54s - 30.06s
-  Language: english
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.05
-  Scale Match: small
+  Text: Kau bilang kerja lembur buat masa depan,
+  Timing: 20.52s - 23.14s
+  Language: mixed
+  Word Count: 7
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.14
 
 Lyric 8:
-  Text: Korupsi terstruktur, jadi budaya yang nyata
-  Timing: 30.62s - 33.62s
-  Language: indonesian
+  Text: Tapi update TikTok tiap makan malam.
+  Timing: 23.14s - 25.62s
+  Language: english
   Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.41
-  Scale Match: small
+  Match Method: forced_alignment_sliding
+  Similarity: 0.78
 
 Lyric 9:
-  Text: Closed doors, contracts played in shadows
-  Timing: 33.64s - 36.16s
-  Language: english
+  Text: Kataku, “nggak apa,” padahal aku tahu,
+  Timing: 25.62s - 28.16s
+  Language: indonesian
   Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.27
-  Scale Match: small
+  Match Method: forced_alignment_sliding
+  Similarity: 0.67
 
 Lyric 10:
-  Text: Pintu-pintu tertutup, kontrak main belakang
-  Timing: 35.48s - 37.48s
-  Language: mixed
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.18
-  Scale Match: small
+  Text: Kau lebih sayang sinyal daripada aku.
+  Timing: 28.16s - 30.86s
+  Language: indonesian
+  Word Count: 6
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.88
 
 Lyric 11:
-  Text: People's projects stolen, while words remain hollow
-  Timing: 38.96s - 41.31s
-  Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.08
-  Scale Match: small
+  Text: Kau janji manis, tapi cuma revisi,
+  Timing: 30.86s - 34.94s
+  Language: indonesian
+  Word Count: 6
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.94
 
 Lyric 12:
-  Text: From center to regions, black chains expand
-  Timing: 44.92s - 47.27s
-  Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.59
-  Scale Match: small
+  Text: Kau janji bahagia, tapi tinggal rencana~
+  Timing: 30.86s - 33.28s
+  Language: mixed
+  Word Count: 6
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.54
 
 Lyric 13:
-  Text: Dari pusat sampai daerah, rantai hitam membentang
-  Timing: 46.38s - 49.18s
-  Language: indonesian
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.74
-  Scale Match: medium
-
-Lyric 14:
-  Text: Hukum lempar tangan, keadilan sering hilang
-  Timing: 52.68s - 55.68s
-  Language: indonesian
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.49
-  Scale Match: small
-
-Lyric 15:
-  Text: Black chains, don't stay silent
-  Timing: 55.66s - 58.29s
-  Language: english
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.67
-  Scale Match: small
-
-Lyric 16:
-  Text: Black chains, don't stay silent
-  Timing: 55.66s - 58.29s
-  Language: english
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.67
-  Scale Match: small
-
-Lyric 17:
-  Text: Rantai hitam, jangan kau bungkam
-  Timing: 58.92s - 61.42s
-  Language: indonesian
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.72
-  Scale Match: small
-
-Lyric 18:
-  Text: Rantai hitam, jangan kau bungkam
-  Timing: 58.92s - 61.42s
-  Language: indonesian
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.72
-  Scale Match: small
-
-Lyric 19:
-  Text: People see, but afraid to speak
-  Timing: 60.86s - 63.38s
-  Language: english
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 0.91
-  Scale Match: small
-
-Lyric 20:
-  Text: People see, but afraid to speak
-  Timing: 60.86s - 63.38s
-  Language: english
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 0.91
-  Scale Match: small
-
-Lyric 21:
-  Text: Rakyat lihat, tapi takut bicara
-  Timing: 64.52s - 67.64s
-  Language: indonesian
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.61
-  Scale Match: small
-
-Lyric 22:
-  Text: Rakyat lihat, tapi takut bicara
-  Timing: 64.52s - 67.64s
-  Language: indonesian
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.61
-  Scale Match: small
-
-Lyric 23:
-  Text: Dirty money on the table, promises held hostage
-  Timing: 66.68s - 70.04s
-  Language: english
-  Word Count: 8
-  Match Method: multi_scale_semantic
-  Similarity: 1.06
-  Scale Match: small
-
-Lyric 24:
-  Text: Dirty money on the table, promises held hostage
-  Timing: 66.68s - 70.04s
-  Language: english
-  Word Count: 8
-  Match Method: multi_scale_semantic
-  Similarity: 1.06
-  Scale Match: small
-
-Lyric 25:
-  Text: Structured corruption, we fight together
-  Timing: 71.42s - 74.05s
-  Language: english
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.46
-  Scale Match: small
-
-Lyric 26:
-  Text: Structured corruption, we fight together
-  Timing: 71.42s - 74.05s
-  Language: english
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.46
-  Scale Match: small
-
-Lyric 27:
-  Text: Korupsi terstruktur, kita lawan bersama
-  Timing: 73.50s - 76.12s
-  Language: english
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.64
-  Scale Match: small
-
-Lyric 28:
-  Text: Korupsi terstruktur, kita lawan bersama
-  Timing: 73.50s - 76.12s
-  Language: english
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.64
-  Scale Match: small
-
-Lyric 29:
-  Text: Duit masuk kantong, moral pergi entah kemana
-  Timing: 79.26s - 82.06s
-  Language: mixed
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.51
-  Scale Match: medium
-
-Lyric 30:
-  Text: Officials wear masks, people still suffer
-  Timing: 82.46s - 85.61s
-  Language: english
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.44
-  Scale Match: small
-
-Lyric 31:
-  Text: Pejabat ganti topeng, rakyat tetap merana
-  Timing: 86.44s - 90.19s
-  Language: indonesian
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 0.95
-  Scale Match: small
-
-Lyric 32:
-  Text: Audits just formalities, reports full of lies
-  Timing: 88.00s - 90.94s
-  Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 0.76
-  Scale Match: medium
-
-Lyric 33:
-  Text: Audit cuma formalitas, laporan penuh tipu daya
-  Timing: 90.92s - 94.42s
-  Language: indonesian
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 0.79
-  Scale Match: small
-
-Lyric 34:
-  Text: Law throws up its hands, justice often lost
-  Timing: 95.16s - 97.85s
-  Language: english
-  Word Count: 8
-  Match Method: multi_scale_semantic
-  Similarity: 0.73
-  Scale Match: medium
-
-Lyric 35:
-  Text: Transparency just slogans, justice is a disguise
-  Timing: 95.16s - 97.51s
-  Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.67
-  Scale Match: medium
-
-Lyric 36:
-  Text: Transparansi tinggal slogan, keadilan hanya maya
-  Timing: 96.98s - 99.98s
-  Language: indonesian
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.21
-  Scale Match: medium
-
-Lyric 37:
-  Text: Not just small fry, big bosses play too
-  Timing: 99.88s - 102.57s
-  Language: english
-  Word Count: 8
-  Match Method: multi_scale_semantic
-  Similarity: 1.30
-  Scale Match: small
-
-Lyric 38:
-  Text: Bukan cuma orang kecil, bos besar ikut main
-  Timing: 102.54s - 105.74s
-  Language: indonesian
-  Word Count: 8
-  Match Method: multi_scale_semantic
-  Similarity: 1.14
-  Scale Match: medium
-
-Lyric 39:
-  Text: Projects, taxes, permits, all through illegal routes
-  Timing: 104.04s - 106.39s
-  Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 0.92
-  Scale Match: small
-
-Lyric 40:
-  Text: Proyek, pajak, izin, semua ada jalur haram
-  Timing: 107.46s - 110.26s
-  Language: indonesian
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.29
-  Scale Match: small
-
-Lyric 41:
-  Text: If we stay silent, future generations inherit
-  Timing: 110.92s - 113.27s
-  Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.53
-  Scale Match: small
-
-Lyric 42:
-  Text: A culture of corruption, higher, more legitimate
-  Timing: 114.10s - 116.45s
-  Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.06
-  Scale Match: medium
-
-Lyric 43:
-  Text: Kalau diam terus, anak cucu bakal warisi
-  Timing: 114.32s - 117.12s
-  Language: indonesian
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.10
-  Scale Match: small
-
-Lyric 44:
-  Text: Proyek rakyat diambil, sementara janji cuma kata
-  Timing: 117.58s - 121.08s
-  Language: indonesian
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 0.70
-  Scale Match: small
-
-Lyric 45:
-  Text: Budaya korupsi yang makin tinggi, makin murni
-  Timing: 118.28s - 121.78s
-  Language: indonesian
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.34
-  Scale Match: medium
-
-Lyric 46:
-  Text: Uang kotor di meja, janji jadi sandera
-  Timing: 135.76s - 138.56s
-  Language: indonesian
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.17
-  Scale Match: small
-
-Lyric 47:
-  Text: Uang kotor di meja, janji jadi sandera
-  Timing: 135.76s - 138.56s
-  Language: indonesian
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.17
-  Scale Match: small
-
-Lyric 48:
-  Text: Raise your voice, don't fear to fight
-  Timing: 143.94s - 146.29s
-  Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.18
-  Scale Match: medium
-
-Lyric 49:
-  Text: Bangkit suara, jangan takut lawan
-  Timing: 145.30s - 147.80s
-  Language: indonesian
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 0.80
-  Scale Match: medium
-
-Lyric 50:
-  Text: Open eyes, open ears, don't stay silent
-  Timing: 149.50s - 151.85s
-  Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.06
-  Scale Match: small
-
-Lyric 51:
-  Text: Buka mata, buka telinga, jangan diam
-  Timing: 152.62s - 155.62s
-  Language: indonesian
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 0.90
-  Scale Match: small
-
-Lyric 52:
-  Text: The system is fragile, but we can change it
-  Timing: 159.92s - 162.94s
-  Language: english
-  Word Count: 9
-  Match Method: multi_scale_semantic
-  Similarity: 1.19
-  Scale Match: small
-
-Lyric 53:
-  Text: Sistem rapuh, tapi kita bisa ubah
-  Timing: 163.06s - 166.06s
-  Language: indonesian
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.19
-  Scale Match: small
-
-Lyric 54:
-  Text: Structured corruption, but we're no slaves
-  Timing: 164.36s - 166.88s
+  Text: Cintaku kayak APBN: defisit tapi niat.
+  Timing: 32.52s - 36.35s
   Language: english
   Word Count: 6
   Match Method: multi_scale_semantic
   Similarity: 1.20
-  Scale Match: medium
+  Fuzzy Similarity: 0.27
+  Scale Match: small
 
-Lyric 55:
-  Text: Struktur rapat, sistem retak, tapi mereka tertawa
-  Timing: 168.82s - 171.62s
+Lyric 14:
+  Text: Kayak undang-undang: disahkan tapi tak diisi.
+  Timing: 34.94s - 39.66s
+  Language: mixed
+  Word Count: 6
+  Match Method: forced_alignment_sliding
+  Similarity: 0.44
+
+Lyric 15:
+  Text: Chatmu kayak janji negara~
+  Timing: 43.62s - 46.38s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.58
+
+Lyric 16:
+  Text: Chatmu kayak janji negara~
+  Timing: 43.62s - 46.38s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.58
+
+Lyric 17:
+  Text: Chatmu kayak janji negara~
+  Timing: 43.62s - 46.38s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.58
+
+Lyric 18:
+  Text: Datang manis, hilang tanpa suara~
+  Timing: 47.98s - 51.28s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.89
+
+Lyric 19:
+  Text: Rame janji, tapi tanpa realita~
+  Timing: 56.70s - 59.80s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.63
+
+Lyric 20:
+  Text: Aku rakyat kecil di hati yang besar,
+  Timing: 64.72s - 67.48s
   Language: indonesian
   Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.21
-  Scale Match: small
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.79
 
-Lyric 56:
-  Text: Korupsi terstruktur, tapi kita bukan budak
-  Timing: 168.82s - 171.82s
-  Language: indonesian
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.35
-  Scale Match: small
-
-Lyric 57:
-  Text: People united, they won't win anymore
-  Timing: 171.44s - 173.96s
-  Language: english
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.24
-  Scale Match: small
-
-Lyric 58:
-  Text: Rakyat bersatu, mereka takkan menang lagi
-  Timing: 173.46s - 176.46s
-  Language: indonesian
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.53
-  Scale Match: medium
-
-Lyric 59:
-  Text: Not just a dream, this is reality
-  Timing: 177.18s - 179.53s
+Lyric 21:
+  Text: Ngutang waktu demi cinta yang tak cair.
+  Timing: 68.16s - 69.94s
   Language: english
   Word Count: 7
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.05
+
+Lyric 22:
+  Text: Katamu sabar, nanti semua lancar,
+  Timing: 70.26s - 71.93s
+  Language: mixed
+  Word Count: 5
+  Match Method: multi_scale_semantic
+  Similarity: 1.23
+  Fuzzy Similarity: 0.27
+  Scale Match: small
+
+Lyric 23:
+  Text: Tapi tiap nunggu malah tambah sadar.
+  Timing: 72.80s - 75.38s
+  Language: mixed
+  Word Count: 6
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.65
+
+Lyric 24:
+  Text: Harapanku kayak utang luar negeri — belum lunas juga, cepat.
+  Timing: 78.28s - 81.40s
+  Language: english
+  Word Count: 10
+  Match Method: multi_scale_semantic
+  Similarity: 1.57
+  Fuzzy Similarity: 0.34
+  Scale Match: medium
+
+Lyric 25:
+  Text: Kau trending di doaku tiap malam,
+  Timing: 81.62s - 83.10s
+  Language: english
+  Word Count: 6
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.78
+
+Lyric 26:
+  Text: Tapi cuma headline tanpa laman.
+  Timing: 83.74s - 86.52s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.11
+
+Lyric 27:
+  Text: Kalau cinta cuma janji,
+  Timing: 86.52s - 89.16s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.11
+
+Lyric 28:
+  Text: Kalau chatmu cuma janji,
+  Timing: 86.52s - 89.16s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.66
+
+Lyric 29:
+  Text: Aku berhenti jadi rakyat hati.
+  Timing: 89.92s - 92.47s
+  Language: english
+  Word Count: 5
   Match Method: multi_scale_semantic
   Similarity: 1.37
+  Fuzzy Similarity: 0.20
   Scale Match: small
 
-Lyric 60:
-  Text: Bukan cuma mimpi, ini suara realita
-  Timing: 178.88s - 181.88s
-  Language: indonesian
+Lyric 30:
+  Text: Kusimpan dalam lagu ini.
+  Timing: 95.04s - 97.18s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.80
+
+Lyric 31:
+  Text: Kau bilang cinta, tapi wacana~
+  Timing: 106.78s - 110.34s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.88
+
+Lyric 32:
+  Text: Chatmu kayak janji negara~ (hoo yeah~)
+  Timing: 113.96s - 116.34s
+  Language: english
   Word Count: 6
   Match Method: multi_scale_semantic
-  Similarity: 1.56
+  Similarity: 1.27
+  Fuzzy Similarity: 0.24
   Scale Match: small
 
-Lyric 61:
-  Text: If we all care, chains can break
-  Timing: 182.00s - 184.35s
+Lyric 33:
+  Text: Cintamu RUU, selalu “on progress.”
+  Timing: 127.20s - 127.84s
   Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 0.94
-  Scale Match: small
+  Word Count: 5
+  Match Method: forced_alignment_sliding
+  Similarity: 0.57
 
-Lyric 62:
-  Text: Fight the black chains, for our future
-  Timing: 182.00s - 184.35s
+Lyric 34:
+  Text: Aku cuma rakyat, tapi masih berharap sidang.
+  Timing: 127.84s - 134.00s
+  Language: mixed
+  Word Count: 7
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.96
+
+Lyric 35:
+  Text: Yeah...
+  Timing: 140.56s - 141.06s
   Language: english
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.52
-  Scale Match: small
+  Word Count: 1
+  Match Method: enhanced_fallback
 
-Lyric 63:
-  Text: Lawan rantai hitam, demi masa depan kita
-  Timing: 184.00s - 186.80s
-  Language: indonesian
-  Word Count: 7
-  Match Method: multi_scale_semantic
-  Similarity: 1.18
-  Scale Match: large
+Lyric 36:
+  Text: Semenit manis, seumur kecewa~
+  Timing: 144.96s - 151.70s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_sliding
+  Similarity: 0.69
 
-Lyric 64:
-  Text: Kalau semua peduli, rantai bisa patah
-  Timing: 185.12s - 188.12s
-  Language: indonesian
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 0.81
-  Scale Match: small
+Lyric 37:
+  Text: (Oh~ chatmu kayak janji negara~)
+  Timing: 160.40s - 161.88s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_sliding
+  Similarity: 0.57
 

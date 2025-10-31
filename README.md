@@ -4,14 +4,17 @@ A cutting-edge AI-powered video generator that creates perfectly synchronized ly
 
 ## 🎯 Final Approach
 
-**Multi-Scale AI Text Extraction + Advanced Semantic Matching + Long Sentence Optimization**: The system uses OpenAI Whisper with enhanced segmentation to extract text from audio, then employs multi-scale Faiss-powered semantic search with adaptive language detection for intelligent lyric matching, especially optimized for long sentences that were previously missed.
+**Forced Alignment + Hierarchical Matching + Phonetic Similarity**: The system uses OpenAI Whisper for word boundary detection, then employs forced alignment with hierarchical matching (sentence → phrase → word) and phonetic similarity algorithms to match known lyrics directly with audio, even when transcription errors occur. This approach is based on state-of-the-art research (HCLAS-X, Contrastive Learning, DTW) and significantly improves lyric matching accuracy.
 
 ### Key Features
 
-- **Enhanced AI Text Extraction**: Uses OpenAI Whisper with enhanced segmentation for better long sentence capture
-- **Multi-Scale Semantic Search**: Uses Faiss with small, medium, and large chunks to capture both short phrases and long sentences
+- **Forced Alignment**: Matches known lyrics directly with audio using hierarchical alignment, not dependent on transcription accuracy
+- **Phonetic Similarity Matching**: Uses Soundex-like phonetic algorithms to match words that sound similar even when spelled differently
+- **Hierarchical Matching**: Matches at sentence level, then phrase level, then word level for better accuracy
+- **Sliding Window DTW-like Approach**: Uses dynamic time warping concepts with multiple window sizes for flexible matching
+- **Multi-Scale Semantic Search**: Fallback uses Faiss with small, medium, and large chunks for comprehensive matching
+- **Sequential Matching**: Tracks last matched position to ensure proper lyric order
 - **Adaptive Language Detection**: Automatically detects English vs Indonesian lyrics for optimal timing
-- **Long Sentence Optimization**: Specialized algorithms for handling complex, long sentences
 - **File-Based Lyrics**: Reads lyrics from external files instead of hardcoded arrays
 - **Advanced Timing Validation**: Intelligent timing adjustment based on language, word count, and vocal speed
 - **Color-Coded Display**: Different colors for English (white) and Indonesian (yellow) lyrics
@@ -60,28 +63,32 @@ generatevideofromaudioimage/
 
 ## 🎵 How It Works
 
-1. **Enhanced AI Text Extraction**: OpenAI Whisper analyzes the MP3 file with enhanced segmentation to extract spoken text with word-level timestamps, optimized for long sentences
-2. **Multi-Scale Index Building**: Creates semantic embeddings using Sentence Transformers and builds Faiss index with small, medium, and large chunks
-3. **Adaptive Language Detection**: Automatically detects English vs Indonesian lyrics for optimal timing and display
-4. **Multi-Scale Semantic Search**: For each lyric, performs semantic search using multiple scales:
-   - Small chunks (3-6 words) for keyword matching
-   - Medium chunks (6-12 words) for phrase matching  
-   - Large chunks (12-20 words) for long sentence matching
-5. **Advanced Matching Algorithm**: Uses adaptive thresholds and similarity boosting based on:
-   - Language match (English/Indonesian)
-   - Sentence length and scale preference
-   - Word count similarity
-6. **Adaptive Duration Calculation**: Calculates optimal lyric duration based on:
+1. **AI Text Extraction**: OpenAI Whisper analyzes the MP3 file to extract word-level timestamps (for boundary detection, not exact transcription)
+2. **Forced Alignment (Primary Method)**:
+   - **Hierarchical Forced Alignment**: For each known lyric, performs hierarchical matching:
+     - Sentence-level matching using sliding windows
+     - Phrase-level matching within sentences
+     - Word-level phonetic matching
+   - **Phonetic Similarity**: Uses Soundex-like algorithm to match words that sound similar (handles transcription errors)
+   - **Multiple Metrics**: Combines text similarity, phonetic similarity, word overlap, and position bonus
+   - **Lower Thresholds**: Uses 0.5 threshold for hierarchical, 0.4 for sliding window (more lenient than semantic search)
+3. **Sliding Window Forced Match**: DTW-like approach with multiple window sizes (±3 words) for flexible matching
+4. **Sequential Matching**: Tracks last matched position and searches forward to maintain proper lyric order
+5. **Fallback Methods**:
+   - **Exact Word Match**: If forced alignment fails, tries exact word matching
+   - **Multi-Scale Semantic Search**: Uses Faiss with small, medium, and large chunks as final fallback
+6. **Adaptive Language Detection**: Automatically detects English vs Indonesian lyrics for optimal timing
+7. **Adaptive Duration Calculation**: Calculates optimal lyric duration based on:
    - Language (Indonesian typically longer)
    - Word count (longer sentences get more time)
    - Vocal speed analysis
-7. **File-Based Processing**: Reads lyrics from `comparison_lyrics.txt` and saves results to separate files
-8. **Advanced Timing Validation**: Intelligent timing adjustment with language-aware overlap resolution
-9. **Video Generation**: Creates smooth animated frames with:
-   - Multi-frequency zoom, pan, and rotation
-   - Color-coded lyric display (white for English, yellow for Indonesian)
-   - Adaptive fade effects based on language and sentence length
-   - Professional video output
+8. **File-Based Processing**: Reads lyrics from `comparison_lyrics.txt` and saves results to separate files
+9. **Advanced Timing Validation**: Intelligent timing adjustment with language-aware overlap resolution
+10. **Video Generation**: Creates smooth animated frames with:
+    - Multi-frequency zoom, pan, and rotation
+    - Color-coded lyric display (white for English, yellow for Indonesian)
+    - Adaptive fade effects based on language and sentence length
+    - Professional video output
 
 ## 🎨 Features
 

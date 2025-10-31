@@ -1,493 +1,296 @@
 === EXTRACTED LYRICS FROM AUDIO (ENHANCED FOR LONG SENTENCES) ===
-Audio file: context/Title _ Judul_Black Chains _ Rantai Hi_cmp.mp3
-Original segments: 58
-Combined segments: 55
-Total words: 428
+Audio file: context/Chatmu Kayak Janji Negara.mp3
+Original segments: 48
+Combined segments: 44
+Total words: 242
 ============================================================
 
-[6.12s-10.94s] (mixed) Bukanku, kubu, kubu, kubu Kami, kubu, kubu, kubu
-[10.94s-13.78s] (english) Behind the glass towers, money flows in silence
-[13.78s-16.42s] (indonesian) Di balik ke dunkacai, uang DM, dia mengali
-[17.00s-22.08s] (english) Promises to the people's soul, conscience ignored, janggir akad Di jual suara nurani, di kaburkan
-[22.08s-24.74s] (english) Tait structures, broken systems, yet they left
-[24.74s-27.54s] (mixed) Structur rapat system, retak, tapi, merek, katar, taua
-[27.54s-29.94s] (english) Structur corruption, agriculture made real
-[29.94s-32.84s] (indonesian) Korupsi terstruktur, jadi budaya yang nyata
-[32.84s-35.48s] (english) Close doors, contract splitting shadows
-[35.48s-38.38s] (english) Pintu-pintu tertutup, contract main black hang
-[38.38s-40.52s] (english) People's products stolen, while words remain
-[40.52s-43.90s] (english) Hello, project rack, at DM, build cementara, janggir cuman kata
-[43.90s-46.38s] (english) From center to regions, black chains expand
-[46.38s-49.46s] (indonesian) Dari pusat sampai daerah, rantai hitam membentang
-[49.46s-52.00s] (english) Love flows up, it's hands just this often lost
-[52.00s-54.76s] (indonesian) Hukum lempar tangan, keadilan sering hilang
-[55.76s-59.24s] (english) Black chains, don't stay silent, rantai hitam
-[59.24s-63.52s] (english) Jangan kau bungkam, people see, berafaitu speak
-[63.52s-67.24s] (english) Raket lihat, tapi takut bicara, dari mani on the table
-[67.76s-70.28s] (english) Promises have lost, edjuang kotor di meja janggir
-[70.28s-74.00s] (english) Jadi sandera, structur corruption, we fight together
-[74.00s-76.62s] (english) Korupsi terstruktur, kita lauan bersama
-[76.62s-79.66s] (english) Manifilze pockets, moros manis somewhere
-[79.66s-82.46s] (english) Duit masuk kantong, moral pergi entak kemana
-[82.46s-85.48s] (english) Officials wear masks, people steal suffer
-[85.48s-88.00s] (indonesian) Pejabat ganti topping, raket tetap merana
-[88.00s-90.54s] (english) Audi just formalities, repart full of lies
-[90.54s-93.36s] (english) Audi jumah formalitas laporan penutipuda
-[93.36s-96.08s] (english) Transparency just logans, justice is a disguise
-[96.08s-99.00s] (indonesian) Transparency tinggal slogan ke Adilan hanya mahi
-[99.00s-104.40s] (english) Not just small fry, big boss display, tubukan jumah orang Kecil boss besar, ikut main
-[104.40s-107.46s] (english) Projects, taxes, permixel, tru in Lego roots
-[107.46s-110.18s] (indonesian) Projek pajak izin semua ada jalur haram
-[110.18s-112.80s] (english) If we stay silent, future generations inherit
-[112.80s-116.86s] (english) Kalau di antarus anak cucu bakal wari si akal cof corruption
-[116.86s-121.38s] (mixed) Hayam olijiren, mebu daya korupsi yang makin tinggi makin muri
-[121.38s-124.44s] (english) Black change, don't stay silent
-[124.44s-126.78s] (mixed) Ratai hitam jangan kau bungkam
-[126.78s-131.80s] (english) People see, para afraid to be, raja kliat tapi takut bicara
-[131.80s-135.14s] (english) Adilan, mani on the table, permises held, structur,
-[135.14s-137.32s] (indonesian) Kutur di meja janji janji sandera
-[138.14s-141.58s] (english) Suzan corruption, we fight together, korupsi, trus struktur
-[141.58s-145.90s] (english) Kita lawan bersama, face your voice, and don't fear to fight
-[145.90s-148.78s] (indonesian) Baki tuara, dan jangan takut lawan
-[148.78s-151.70s] (english) Open eyes, open ears, log stay silent
-[151.70s-154.32s] (english) Bukam anda, buka klingan, jangan biar
-[154.32s-158.36s] (english) If we all care, change can break, ga us up open to leave
-[158.36s-161.10s] (english) Ratai bisa fatar, the system is fragile
-[161.10s-164.68s] (english) But we can change it, system rapu tapi kita bisa
-[164.68s-169.16s] (english) Strature corruption, but when all slaves, korupsi, trus struktur
-[169.16s-173.46s] (english) Tapi kita bukan budak, people united, they won't win anymore
-[173.46s-176.22s] (indonesian) Rakyat bersatu, mereka takkan menang lagi
-[176.22s-178.88s] (english) Not just a dream, this is reality
-[178.88s-183.08s] (english) Bukan cuma mimpi ini suara realita, fight the black chains
-[183.08s-187.26s] (english) For our future, lawan rantai hitam dami masa depan kita
+[0.00s-0.34s] (english) Ya?
+[2.70s-5.06s] (english) Jat muda tangkai rapat pari porna
+[6.56s-8.16s] (mixed) Malaure tapi rame janji
+[9.74s-10.42s] (english) Ya?
+[10.74s-17.56s] (english) Kata mu cinta tapi dilay terus aku Dasa bertapis-apapun bisa minusah Tori muaktif tapi chat kungang
+[17.56s-20.00s] (indonesian) Gur janji bahagia tapi draknya belum dikunjur
+[20.52s-23.14s] (mixed) Kau bilang kerja lembur buat masa depan
+[23.14s-25.62s] (indonesian) Tapi api di tik kok tiap makan malam
+[25.62s-28.16s] (indonesian) Kata kun ga apa pada hal aku tahu
+[28.16s-30.86s] (indonesian) Kau lebih sayang senyial daripada aku
+[30.86s-34.94s] (indonesian) Kau janji manis tapi cuma revisi
+[34.94s-42.30s] (indonesian) Kayak undang-undang disakan tapi tadi sih
+[42.30s-47.56s] (english) Chat muka ya janji negara Ya?
+[47.98s-51.28s] (english) Datang manis hilang tanpa suara
+[52.16s-56.70s] (english) Chat muka ya janji negara
+[56.70s-59.80s] (english) Rame janji tapi tampar realita
+[59.80s-63.46s] (mixed) Kau bilang ciman haka tapi ngetelik suara Jok
+[64.72s-67.48s] (indonesian) Akurat kiat kecil di hati yang besar
+[67.48s-69.70s] (english) Mul tang waktu demi cinta yang tak cair
+[70.26s-72.80s] (english) Kata muka bar nanti semalancar
+[72.80s-75.38s] (english) Tapi tiap numgu malat tambah sadar
+[75.38s-77.76s] (english) Cinta kukai api, bn davisi tapi
+[77.76s-80.78s] (english) Niat harapan kukai akutang luar negri belum luna
+[80.78s-83.70s] (english) Juga cepat, kau trending di doa kuti amal
+[83.74s-86.52s] (english) Tapi cuma headline tanpa lama
+[86.52s-90.14s] (english) Kalau cinta cuma janji aku bareng ti
+[90.14s-92.24s] (english) Jadirak kiat hati
+[92.24s-97.18s] (english) Kalau ced mojuma janji khusim pan dalam lagu ini
+[97.18s-99.74s] (english) Chat muka ya janji negara
+[101.92s-105.14s] (english) Semanit manis semu kecewa
+[106.78s-110.34s] (english) Kau bilang cinta tapi wajana
+[111.82s-115.14s] (english) Chat muka ya janji negara
+[115.14s-118.30s] (english) Chat muka ya janji negara
+[122.12s-125.02s] (english) Ya cinta muruh
+[125.02s-127.84s] (english) Selalu on progress
+[127.84s-130.76s] (mixed) Aku cuma rakyat
+[131.34s-134.86s] (mixed) Tapi masih berharap sedang selanjutnya
+[134.86s-137.62s] (english) Ada hasilnya
+[138.62s-143.58s] (english) Jadmuka ya janji negara
+[143.58s-146.26s] (english) Jadmuka ya janji negara
+[148.62s-151.70s] (english) Semanit manis semu kecewa
+[153.62s-156.48s] (english) Kau bilang cinta tapi wajana
+[158.62s-161.88s] (english) Chat muka ya janji negara
+[167.62s-168.48s] (english) Ya
 
 ============================================================
 === WORD-LEVEL TIMESTAMPS ===
-[6.12s-6.64s] Bukanku,
-[6.64s-6.64s] kubu,
-[6.64s-6.64s] kubu,
-[6.76s-8.24s] kubu
-[9.06s-9.58s] Kami,
-[10.94s-10.94s] kubu,
-[10.94s-10.94s] kubu,
-[10.94s-10.94s] kubu
-[10.94s-11.46s] Behind
-[11.46s-11.68s] the
-[11.68s-11.86s] glass
-[11.86s-12.38s] towers,
-[12.62s-12.96s] money
-[12.96s-13.26s] flows
-[13.26s-13.40s] in
-[13.40s-13.78s] silence
-[13.78s-14.10s] Di
-[14.10s-14.42s] balik
-[14.42s-14.56s] ke
-[14.56s-15.16s] dunkacai,
-[15.22s-15.48s] uang
-[15.48s-15.70s] DM,
-[15.94s-16.02s] dia
-[16.02s-16.42s] mengali
-[16.82s-17.08s] Promises
-[17.08s-17.34s] to
-[17.34s-17.50s] the
-[17.50s-18.04s] people's
-[18.04s-18.22s] soul,
-[18.42s-18.86s] conscience
-[18.86s-19.30s] ignored,
-[19.54s-19.82s] janggir
-[19.82s-20.14s] akad
-[20.14s-20.32s] Di
-[20.32s-20.48s] jual
-[20.48s-20.72s] suara
-[20.72s-21.26s] nurani,
-[21.44s-21.48s] di
-[21.48s-22.08s] kaburkan
-[22.08s-22.60s] Tait
-[22.60s-23.02s] structures,
-[23.30s-23.46s] broken
-[23.46s-23.94s] systems,
-[24.06s-24.26s] yet
-[24.26s-24.42s] they
-[24.42s-24.74s] left
-[24.74s-25.14s] Structur
-[25.14s-25.46s] rapat
-[25.46s-25.74s] system,
-[25.92s-26.12s] retak,
-[26.28s-26.48s] tapi,
-[26.58s-26.90s] merek,
-[27.06s-27.14s] katar,
-[27.28s-27.54s] taua
-[27.54s-28.08s] Structur
-[28.08s-28.60s] corruption,
-[28.84s-29.16s] agriculture
-[29.16s-29.50s] made
-[29.50s-29.94s] real
-[29.94s-30.62s] Korupsi
-[30.62s-31.16s] terstruktur,
-[31.42s-31.60s] jadi
-[31.60s-32.04s] budaya
-[32.04s-32.36s] yang
-[32.36s-32.84s] nyata
-[32.84s-33.64s] Close
-[33.64s-34.08s] doors,
-[34.48s-34.72s] contract
-[34.72s-35.06s] splitting
-[35.06s-35.48s] shadows
-[35.48s-36.14s] Pintu
-[36.14s-36.46s] -pintu
-[36.46s-37.14s] tertutup,
-[37.30s-37.48s] contract
-[37.48s-37.78s] main
-[37.78s-38.08s] black
-[38.08s-38.38s] hang
-[38.38s-38.96s] People's
-[38.96s-39.18s] products
-[39.18s-39.62s] stolen,
-[39.86s-39.94s] while
-[39.94s-40.22s] words
-[40.22s-40.52s] remain
-[40.52s-40.90s] Hello,
-[40.90s-41.30s] project
-[41.30s-41.56s] rack,
-[41.58s-41.72s] at
-[41.72s-41.94s] DM,
-[42.12s-42.18s] build
-[42.18s-42.80s] cementara,
-[42.98s-43.18s] janggir
-[43.18s-43.44s] cuman
-[43.44s-43.90s] kata
-[43.90s-44.40s] From
-[44.40s-44.72s] center
-[44.72s-44.92s] to
-[44.92s-45.30s] regions,
-[45.58s-45.74s] black
-[45.74s-45.96s] chains
-[45.96s-46.38s] expand
-[46.38s-46.78s] Dari
-[46.78s-47.16s] pusat
-[47.16s-47.44s] sampai
-[47.44s-48.04s] daerah,
-[48.16s-48.40s] rantai
-[48.40s-48.74s] hitam
-[48.74s-49.46s] membentang
-[49.46s-49.82s] Love
-[49.82s-50.12s] flows
-[50.12s-50.36s] up,
-[50.54s-50.74s] it's
-[50.74s-50.90s] hands
-[50.90s-51.16s] just
-[51.16s-51.32s] this
-[51.32s-51.60s] often
-[51.60s-52.00s] lost
-[52.00s-52.36s] Hukum
-[52.36s-52.68s] lempar
-[52.68s-53.20s] tangan,
-[53.36s-53.82s] keadilan
-[53.82s-54.26s] sering
-[54.26s-54.76s] hilang
-[55.66s-56.02s] Black
-[56.02s-57.06s] chains,
-[57.26s-57.44s] don't
-[57.44s-57.70s] stay
-[57.70s-58.22s] silent,
-[58.48s-58.92s] rantai
-[58.92s-59.24s] hitam
-[59.24s-59.56s] Jangan
-[59.56s-59.84s] kau
-[59.84s-60.72s] bungkam,
-[60.86s-61.26s] people
-[61.26s-61.84s] see,
-[62.30s-63.18s] berafaitu
-[63.18s-63.52s] speak
-[63.52s-64.08s] Raket
-[64.08s-64.44s] lihat,
-[64.52s-64.76s] tapi
-[64.76s-65.08s] takut
-[65.08s-65.66s] bicara,
-[65.88s-66.08s] dari
-[66.08s-66.54s] mani
-[66.54s-66.68s] on
-[66.68s-66.82s] the
-[66.82s-67.24s] table
-[67.62s-67.98s] Promises
-[67.98s-68.20s] have
-[68.20s-68.52s] lost,
-[68.62s-69.06s] edjuang
-[69.06s-69.44s] kotor
-[69.44s-69.60s] di
-[69.60s-69.88s] meja
-[69.88s-70.28s] janggir
-[70.28s-70.58s] Jadi
-[70.58s-71.20s] sandera,
-[71.42s-72.14s] structur
-[72.14s-72.76s] corruption,
-[72.94s-73.22s] we
-[73.22s-73.50s] fight
-[73.50s-74.00s] together
-[74.00s-74.76s] Korupsi
-[74.76s-75.14s] terstruktur,
-[75.54s-75.76s] kita
-[75.76s-76.12s] lauan
-[76.12s-76.62s] bersama
-[76.62s-77.78s] Manifilze
-[77.78s-78.22s] pockets,
-[78.66s-78.92s] moros
-[78.92s-79.26s] manis
-[79.26s-79.66s] somewhere
-[79.66s-80.14s] Duit
-[80.14s-80.38s] masuk
-[80.38s-80.90s] kantong,
-[81.08s-81.26s] moral
-[81.26s-81.66s] pergi
-[81.66s-82.02s] entak
-[82.02s-82.46s] kemana
-[82.46s-83.38s] Officials
-[83.38s-83.60s] wear
-[83.60s-84.10s] masks,
-[84.36s-84.64s] people
-[84.64s-84.98s] steal
-[84.98s-85.48s] suffer
-[85.48s-86.14s] Pejabat
-[86.14s-86.44s] ganti
-[86.44s-86.76s] topping,
-[86.76s-87.18s] raket
-[87.18s-87.50s] tetap
-[87.50s-88.00s] merana
-[88.00s-88.46s] Audi
-[88.46s-88.70s] just
-[88.70s-89.42s] formalities,
-[89.56s-89.88s] repart
-[89.88s-90.12s] full
-[90.12s-90.30s] of
-[90.30s-90.54s] lies
-[90.54s-90.92s] Audi
-[90.92s-91.30s] jumah
-[91.30s-91.94s] formalitas
-[91.94s-92.54s] laporan
-[92.54s-93.36s] penutipuda
-[93.36s-94.38s] Transparency
-[94.38s-94.60s] just
-[94.60s-95.06s] logans,
-[95.16s-95.44s] justice
-[95.44s-95.62s] is
-[95.62s-95.76s] a
-[95.76s-96.08s] disguise
-[96.08s-96.98s] Transparency
-[96.98s-97.32s] tinggal
-[97.32s-97.62s] slogan
-[97.62s-97.90s] ke
-[97.90s-98.40s] Adilan
-[98.40s-98.62s] hanya
-[98.62s-99.00s] mahi
-[99.00s-99.72s] Not
-[99.72s-99.88s] just
-[99.88s-100.16s] small
-[100.16s-100.52s] fry,
-[100.80s-100.86s] big
-[100.86s-101.16s] boss
-[101.16s-101.52s] display,
-[101.74s-102.12s] tubukan
-[102.12s-102.54s] jumah
-[102.54s-102.80s] orang
-[102.80s-103.18s] Kecil
-[103.18s-103.38s] boss
-[103.38s-103.68s] besar,
-[103.98s-104.04s] ikut
-[104.04s-104.40s] main
-[104.40s-105.36s] Projects,
-[105.56s-105.78s] taxes,
-[106.06s-106.48s] permixel,
-[106.60s-106.68s] tru
-[106.68s-106.82s] in
-[106.82s-107.08s] Lego
-[107.08s-107.46s] roots
-[107.46s-107.82s] Projek
-[107.82s-108.20s] pajak
-[108.20s-108.54s] izin
-[108.54s-108.84s] semua
-[108.84s-109.18s] ada
-[109.18s-109.58s] jalur
-[109.58s-110.18s] haram
-[110.18s-110.66s] If
-[110.66s-110.74s] we
-[110.74s-110.92s] stay
-[110.92s-111.32s] silent,
-[111.52s-111.66s] future
-[111.66s-112.18s] generations
-[112.18s-112.80s] inherit
-[112.80s-113.30s] Kalau
-[113.30s-113.54s] di
-[113.54s-114.10s] antarus
-[114.10s-114.32s] anak
-[114.32s-114.70s] cucu
-[114.70s-115.08s] bakal
-[115.08s-115.38s] wari
-[115.38s-115.62s] si
-[115.62s-116.04s] akal
-[116.04s-116.34s] cof
-[116.34s-116.86s] corruption
-[116.86s-117.58s] Hayam
-[117.58s-118.18s] olijiren,
-[118.28s-118.48s] mebu
-[118.48s-118.88s] daya
-[118.88s-119.40s] korupsi
-[119.40s-119.56s] yang
-[119.56s-119.90s] makin
-[119.90s-120.22s] tinggi
-[120.22s-120.62s] makin
-[120.62s-121.38s] muri
-[121.38s-122.28s] Black
-[122.28s-122.72s] change,
-[123.48s-123.64s] don't
-[123.64s-123.90s] stay
-[123.90s-124.44s] silent
-[124.44s-125.10s] Ratai
-[125.10s-125.46s] hitam
-[125.46s-125.74s] jangan
-[125.74s-126.02s] kau
-[126.02s-126.78s] bungkam
-[126.78s-127.46s] People
-[127.46s-128.18s] see,
-[128.68s-128.82s] para
-[128.82s-129.16s] afraid
-[129.16s-129.40s] to
-[129.40s-129.72s] be,
-[129.98s-130.20s] raja
-[130.20s-130.68s] kliat
-[130.68s-130.92s] tapi
-[130.92s-131.28s] takut
-[131.28s-131.80s] bicara
-[131.80s-132.52s] Adilan,
-[132.52s-132.74s] mani
-[132.74s-132.90s] on
-[132.90s-133.04s] the
-[133.04s-133.42s] table,
-[133.84s-134.18s] permises
-[134.18s-134.44s] held,
-[134.54s-135.14s] structur,
-[135.14s-135.58s] Kutur
-[135.58s-135.76s] di
-[135.76s-136.06s] meja
-[136.06s-136.48s] janji
-[136.48s-136.82s] janji
-[136.82s-137.32s] sandera
-[137.98s-138.30s] Suzan
-[138.30s-138.98s] corruption,
-[139.28s-139.44s] we
-[139.44s-139.72s] fight
-[139.72s-140.22s] together,
-[140.66s-140.96s] korupsi,
-[141.04s-141.20s] trus
-[141.20s-141.58s] struktur
-[141.58s-141.94s] Kita
-[141.94s-142.38s] lawan
-[142.38s-142.82s] bersama,
-[143.18s-143.94s] face
-[143.94s-144.12s] your
-[144.12s-144.68s] voice,
-[144.86s-144.94s] and
-[144.94s-145.14s] don't
-[145.14s-145.30s] fear
-[145.30s-145.48s] to
-[145.48s-145.90s] fight
-[145.90s-146.60s] Baki
-[146.60s-147.20s] tuara,
-[147.44s-147.50s] dan
-[147.50s-147.78s] jangan
-[147.78s-148.22s] takut
-[148.22s-148.78s] lawan
-[148.78s-149.50s] Open
-[149.50s-149.88s] eyes,
-[150.00s-150.24s] open
-[150.24s-150.56s] ears,
-[150.72s-150.90s] log
-[150.90s-151.18s] stay
-[151.18s-151.70s] silent
-[151.70s-152.20s] Bukam
-[152.20s-152.44s] anda,
-[152.62s-152.84s] buka
-[152.84s-153.32s] klingan,
-[153.52s-153.74s] jangan
-[153.74s-154.32s] biar
-[154.32s-154.84s] If
-[154.84s-154.96s] we
-[154.96s-155.12s] all
-[155.12s-155.56s] care,
-[155.94s-156.34s] change
-[156.34s-156.52s] can
-[156.52s-156.84s] break,
-[157.10s-157.10s] ga
-[157.10s-157.32s] us
-[157.32s-157.44s] up
-[157.44s-157.86s] open
-[157.86s-158.08s] to
-[158.08s-158.36s] leave
-[158.36s-158.90s] Ratai
-[158.90s-159.14s] bisa
-[159.14s-159.68s] fatar,
-[159.92s-159.92s] the
-[159.92s-160.32s] system
-[160.32s-160.66s] is
-[160.66s-161.10s] fragile
-[161.10s-161.64s] But
-[161.64s-161.80s] we
-[161.80s-161.96s] can
-[161.96s-162.40s] change
-[162.40s-162.58s] it,
-[162.78s-163.06s] system
-[163.06s-163.62s] rapu
-[163.62s-163.98s] tapi
-[163.98s-164.36s] kita
-[164.36s-164.68s] bisa
-[164.68s-165.92s] Strature
-[165.92s-166.54s] corruption,
-[166.90s-167.20s] but
-[167.20s-167.40s] when
-[167.40s-167.54s] all
-[167.54s-167.84s] slaves,
-[168.24s-168.58s] korupsi,
-[168.70s-168.82s] trus
-[168.82s-169.16s] struktur
-[169.16s-169.58s] Tapi
-[169.58s-169.94s] kita
-[169.94s-170.30s] bukan
-[170.30s-170.80s] budak,
-[171.00s-171.44s] people
-[171.44s-171.98s] united,
-[172.30s-172.38s] they
-[172.38s-172.66s] won't
-[172.66s-172.88s] win
-[172.88s-173.46s] anymore
-[173.46s-174.12s] Rakyat
-[174.12s-174.62s] bersatu,
-[174.82s-174.98s] mereka
-[174.98s-175.48s] takkan
-[175.48s-175.78s] menang
-[175.78s-176.22s] lagi
-[176.22s-176.84s] Not
-[176.84s-177.06s] just
-[177.06s-177.18s] a
-[177.18s-177.64s] dream,
-[177.92s-178.22s] this
-[178.22s-178.34s] is
-[178.34s-178.88s] reality
-[178.88s-179.58s] Bukan
-[179.58s-179.86s] cuma
-[179.86s-180.46s] mimpi
-[180.46s-180.76s] ini
-[180.76s-181.08s] suara
-[181.08s-181.78s] realita,
-[182.00s-182.30s] fight
-[182.30s-182.46s] the
-[182.46s-182.64s] black
-[182.64s-183.08s] chains
-[183.08s-183.72s] For
-[183.72s-184.00s] our
-[184.00s-184.46s] future,
-[184.72s-185.12s] lawan
-[185.12s-185.44s] rantai
-[185.44s-185.80s] hitam
-[185.80s-186.12s] dami
-[186.12s-186.42s] masa
-[186.42s-186.80s] depan
-[186.80s-187.26s] kita
+[0.00s-0.34s] Ya?
+[2.70s-3.38s] Jat
+[3.38s-3.62s] muda
+[3.62s-3.96s] tangkai
+[3.96s-4.36s] rapat
+[4.36s-4.64s] pari
+[4.64s-5.06s] porna
+[6.56s-7.24s] Malaure
+[7.24s-7.40s] tapi
+[7.40s-7.66s] rame
+[7.66s-8.16s] janji
+[9.74s-10.42s] Ya?
+[10.74s-11.14s] Kata
+[11.14s-11.34s] mu
+[11.34s-11.60s] cinta
+[11.60s-11.96s] tapi
+[11.96s-12.30s] dilay
+[12.30s-12.72s] terus
+[12.72s-13.14s] aku
+[13.14s-13.52s] Dasa
+[13.52s-14.12s] bertapis
+[14.12s-14.60s] -apapun
+[14.60s-14.84s] bisa
+[14.84s-15.18s] minusah
+[15.68s-16.04s] Tori
+[16.04s-16.68s] muaktif
+[16.68s-16.94s] tapi
+[16.94s-17.16s] chat
+[17.16s-17.56s] kungang
+[17.56s-17.92s] Gur
+[17.92s-18.26s] janji
+[18.26s-18.74s] bahagia
+[18.74s-19.04s] tapi
+[19.04s-19.40s] draknya
+[19.40s-19.66s] belum
+[19.66s-20.00s] dikunjur
+[20.52s-20.74s] Kau
+[20.74s-20.94s] bilang
+[20.94s-21.32s] kerja
+[21.32s-21.66s] lembur
+[21.66s-22.12s] buat
+[22.12s-22.42s] masa
+[22.42s-23.14s] depan
+[23.14s-23.44s] Tapi
+[23.44s-23.74s] api
+[23.74s-23.76s] di
+[23.76s-24.10s] tik
+[24.10s-24.30s] kok
+[24.30s-24.74s] tiap
+[24.74s-25.04s] makan
+[25.04s-25.62s] malam
+[25.62s-25.96s] Kata
+[25.96s-26.26s] kun
+[26.26s-26.54s] ga
+[26.54s-26.84s] apa
+[26.84s-27.26s] pada
+[27.26s-27.54s] hal
+[27.54s-27.78s] aku
+[27.78s-28.16s] tahu
+[28.16s-28.48s] Kau
+[28.48s-28.70s] lebih
+[28.70s-29.12s] sayang
+[29.12s-29.54s] senyial
+[29.54s-30.16s] daripada
+[30.16s-30.86s] aku
+[30.86s-31.18s] Kau
+[31.18s-31.76s] janji
+[31.76s-32.52s] manis
+[32.52s-33.28s] tapi
+[33.28s-33.82s] cuma
+[33.82s-34.94s] revisi
+[34.94s-36.00s] Kayak
+[36.00s-36.74s] undang
+[36.74s-37.56s] -undang
+[37.56s-38.10s] disakan
+[38.10s-38.82s] tapi
+[38.82s-39.66s] tadi
+[39.66s-42.30s] sih
+[42.30s-42.72s] Chat
+[42.72s-43.22s] muka
+[43.22s-43.62s] ya
+[43.62s-44.48s] janji
+[44.48s-46.38s] negara
+[46.90s-47.56s] Ya?
+[47.98s-48.30s] Datang
+[48.30s-48.92s] manis
+[48.92s-49.28s] hilang
+[49.28s-50.18s] tanpa
+[50.18s-51.28s] suara
+[52.16s-52.98s] Chat
+[52.98s-53.52s] muka
+[53.52s-53.94s] ya
+[53.94s-54.78s] janji
+[54.78s-56.70s] negara
+[56.70s-57.58s] Rame
+[57.58s-58.12s] janji
+[58.12s-58.56s] tapi
+[58.56s-58.94s] tampar
+[58.94s-59.80s] realita
+[59.80s-60.20s] Kau
+[60.20s-60.38s] bilang
+[60.38s-60.68s] ciman
+[60.68s-60.98s] haka
+[60.98s-61.46s] tapi
+[61.46s-62.02s] ngetelik
+[62.02s-62.18s] suara
+[62.70s-63.46s] Jok
+[64.72s-65.48s] Akurat
+[65.48s-65.76s] kiat
+[65.76s-66.34s] kecil
+[66.34s-66.52s] di
+[66.52s-66.86s] hati
+[66.86s-67.00s] yang
+[67.00s-67.48s] besar
+[67.48s-68.16s] Mul
+[68.16s-68.26s] tang
+[68.26s-68.50s] waktu
+[68.50s-68.86s] demi
+[68.86s-69.18s] cinta
+[69.18s-69.40s] yang
+[69.40s-69.56s] tak
+[69.56s-69.94s] cair
+[70.26s-70.80s] Kata
+[70.80s-71.06s] muka
+[71.06s-71.46s] bar
+[71.46s-71.78s] nanti
+[71.78s-72.80s] semalancar
+[72.80s-73.08s] Tapi
+[73.08s-73.46s] tiap
+[73.46s-73.90s] numgu
+[73.90s-74.44s] malat
+[74.44s-74.72s] tambah
+[74.72s-75.38s] sadar
+[75.38s-75.66s] Cinta
+[75.66s-76.08s] kukai
+[76.08s-76.64s] api,
+[76.76s-76.96s] bn
+[76.96s-77.44s] davisi
+[77.44s-77.76s] tapi
+[77.76s-78.28s] Niat
+[78.28s-78.70s] harapan
+[78.70s-79.14s] kukai
+[79.14s-79.58s] akutang
+[79.58s-79.88s] luar
+[79.88s-80.16s] negri
+[80.16s-80.48s] belum
+[80.48s-80.78s] luna
+[80.78s-81.12s] Juga
+[81.12s-81.62s] cepat,
+[81.62s-82.08s] kau
+[82.08s-82.54s] trending
+[82.54s-82.82s] di
+[82.82s-83.10s] doa
+[83.10s-83.36s] kuti
+[83.36s-83.74s] amal
+[83.74s-84.66s] Tapi
+[84.66s-84.94s] cuma
+[84.94s-85.56s] headline
+[85.56s-86.00s] tanpa
+[86.00s-86.52s] lama
+[86.52s-87.58s] Kalau
+[87.58s-87.90s] cinta
+[87.90s-88.36s] cuma
+[88.36s-89.16s] janji
+[89.16s-89.54s] aku
+[89.54s-89.92s] bareng
+[89.92s-90.14s] ti
+[90.14s-90.90s] Jadirak
+[90.90s-91.14s] kiat
+[91.14s-92.24s] hati
+[92.24s-92.74s] Kalau
+[92.74s-93.00s] ced
+[93.00s-93.54s] mojuma
+[93.54s-94.34s] janji
+[94.34s-95.04s] khusim
+[95.04s-95.26s] pan
+[95.26s-95.64s] dalam
+[95.64s-96.30s] lagu
+[96.30s-97.18s] ini
+[97.18s-97.56s] Chat
+[97.56s-98.06s] muka
+[98.06s-98.42s] ya
+[98.42s-99.10s] janji
+[99.10s-99.74s] negara
+[101.92s-102.98s] Semanit
+[102.98s-103.40s] manis
+[103.40s-104.02s] semu
+[104.02s-105.14s] kecewa
+[106.78s-107.84s] Kau
+[107.84s-108.06s] bilang
+[108.06s-108.40s] cinta
+[108.40s-109.08s] tapi
+[109.08s-110.34s] wajana
+[111.82s-113.00s] Chat
+[113.00s-113.54s] muka
+[113.54s-113.96s] ya
+[113.96s-114.58s] janji
+[114.58s-115.14s] negara
+[115.14s-115.52s] Chat
+[115.52s-116.12s] muka
+[116.12s-116.54s] ya
+[116.54s-117.12s] janji
+[117.12s-118.30s] negara
+[122.12s-123.30s] Ya
+[123.30s-124.48s] cinta
+[124.48s-125.02s] muruh
+[125.02s-127.20s] Selalu
+[127.20s-127.42s] on
+[127.42s-127.84s] progress
+[127.84s-129.80s] Aku
+[129.80s-130.08s] cuma
+[130.08s-130.76s] rakyat
+[131.34s-132.88s] Tapi
+[132.88s-133.16s] masih
+[133.16s-133.64s] berharap
+[133.64s-134.00s] sedang
+[134.00s-134.86s] selanjutnya
+[134.86s-136.96s] Ada
+[136.96s-137.62s] hasilnya
+[138.62s-139.98s] Jadmuka
+[139.98s-140.42s] ya
+[140.42s-141.14s] janji
+[141.14s-143.58s] negara
+[143.58s-144.56s] Jadmuka
+[144.56s-144.96s] ya
+[144.96s-145.58s] janji
+[145.58s-146.26s] negara
+[148.62s-149.40s] Semanit
+[149.40s-149.90s] manis
+[149.90s-150.46s] semu
+[150.46s-151.70s] kecewa
+[153.61s-154.30s] Kau
+[154.30s-154.52s] bilang
+[154.52s-154.86s] cinta
+[154.86s-155.56s] tapi
+[155.56s-156.48s] wajana
+[158.62s-159.48s] Chat
+[159.48s-160.00s] muka
+[160.00s-160.40s] ya
+[160.40s-161.04s] janji
+[161.04s-161.88s] negara
+[167.62s-168.48s] Ya
