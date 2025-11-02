@@ -1,296 +1,259 @@
 === EXTRACTED LYRICS FROM AUDIO (ENHANCED FOR LONG SENTENCES) ===
-Audio file: context/Chatmu Kayak Janji Negara.mp3
-Original segments: 48
-Combined segments: 44
-Total words: 242
+Audio file: context/Cinta di Tengah Scroll.mp3
+Original segments: 26
+Combined segments: 26
+Total words: 223
 ============================================================
 
-[0.00s-0.34s] (english) Ya?
-[2.70s-5.06s] (english) Jat muda tangkai rapat pari porna
-[6.56s-8.16s] (mixed) Malaure tapi rame janji
-[9.74s-10.42s] (english) Ya?
-[10.74s-17.56s] (english) Kata mu cinta tapi dilay terus aku Dasa bertapis-apapun bisa minusah Tori muaktif tapi chat kungang
-[17.56s-20.00s] (indonesian) Gur janji bahagia tapi draknya belum dikunjur
-[20.52s-23.14s] (mixed) Kau bilang kerja lembur buat masa depan
-[23.14s-25.62s] (indonesian) Tapi api di tik kok tiap makan malam
-[25.62s-28.16s] (indonesian) Kata kun ga apa pada hal aku tahu
-[28.16s-30.86s] (indonesian) Kau lebih sayang senyial daripada aku
-[30.86s-34.94s] (indonesian) Kau janji manis tapi cuma revisi
-[34.94s-42.30s] (indonesian) Kayak undang-undang disakan tapi tadi sih
-[42.30s-47.56s] (english) Chat muka ya janji negara Ya?
-[47.98s-51.28s] (english) Datang manis hilang tanpa suara
-[52.16s-56.70s] (english) Chat muka ya janji negara
-[56.70s-59.80s] (english) Rame janji tapi tampar realita
-[59.80s-63.46s] (mixed) Kau bilang ciman haka tapi ngetelik suara Jok
-[64.72s-67.48s] (indonesian) Akurat kiat kecil di hati yang besar
-[67.48s-69.70s] (english) Mul tang waktu demi cinta yang tak cair
-[70.26s-72.80s] (english) Kata muka bar nanti semalancar
-[72.80s-75.38s] (english) Tapi tiap numgu malat tambah sadar
-[75.38s-77.76s] (english) Cinta kukai api, bn davisi tapi
-[77.76s-80.78s] (english) Niat harapan kukai akutang luar negri belum luna
-[80.78s-83.70s] (english) Juga cepat, kau trending di doa kuti amal
-[83.74s-86.52s] (english) Tapi cuma headline tanpa lama
-[86.52s-90.14s] (english) Kalau cinta cuma janji aku bareng ti
-[90.14s-92.24s] (english) Jadirak kiat hati
-[92.24s-97.18s] (english) Kalau ced mojuma janji khusim pan dalam lagu ini
-[97.18s-99.74s] (english) Chat muka ya janji negara
-[101.92s-105.14s] (english) Semanit manis semu kecewa
-[106.78s-110.34s] (english) Kau bilang cinta tapi wajana
-[111.82s-115.14s] (english) Chat muka ya janji negara
-[115.14s-118.30s] (english) Chat muka ya janji negara
-[122.12s-125.02s] (english) Ya cinta muruh
-[125.02s-127.84s] (english) Selalu on progress
-[127.84s-130.76s] (mixed) Aku cuma rakyat
-[131.34s-134.86s] (mixed) Tapi masih berharap sedang selanjutnya
-[134.86s-137.62s] (english) Ada hasilnya
-[138.62s-143.58s] (english) Jadmuka ya janji negara
-[143.58s-146.26s] (english) Jadmuka ya janji negara
-[148.62s-151.70s] (english) Semanit manis semu kecewa
-[153.62s-156.48s] (english) Kau bilang cinta tapi wajana
-[158.62s-161.88s] (english) Chat muka ya janji negara
-[167.62s-168.48s] (english) Ya
+[22.62s-28.48s] (indonesian) Kita ketemu di dunia cepat, semua berlomba viral cepat
+[28.48s-33.96s] (english) Tapi kamu lain gak kejauh view, gak cari likes cuma kasih new
+[33.96s-38.76s] (english) Tentang laksa yang gak trending, tentang-tentang meski pending
+[38.76s-44.40s] (english) Aku gak butuh filter haji, cukup pelukmu udah hancar di hati
+[45.80s-54.22s] (mixed) Sayang, sama dunia makin langsung, aku tetap percaya yang asli itu kamu
+[54.22s-59.56s] (english) Cinta di tengah strong, tetap butuh alat mirang hilang
+[59.56s-65.00s] (indonesian) Kau bukan mati malam, tapi doa yang datang pelan
+[65.00s-75.06s] (english) Biar dunia sibuk pencitraan, aku sibuk rawat perasaan
+[75.06s-80.70s] (english) Cinta di tengah strong, kamu tetap go
+[80.70s-86.18s] (english) Orang cari trending, aku cari tanah, kamu kaya lagu lawas, tapi menang
+[86.18s-91.36s] (indonesian) Bukan sekadar hype dua minggu, tapi kisah panjang gak bisa skip begitu
+[91.36s-96.56s] (indonesian) Kamu gak pernah janji surga, tapi sabar tiap drama kerja
+[96.56s-101.50s] (english) Cinta ini bukan konten, ini healing yang konsisten
+[101.50s-111.32s] (english) Cinta, alat hidupnya pedam, aku masih hafal suaramu dalam
+[111.32s-120.30s] (english) Tak dapat dukrend di barang, asal tetap saling yaring didih
+[120.30s-127.40s] (english) Cinta ini terkenas strong, tetap hidup pelurunya mohon
+[127.40s-132.84s] (mixed) Kamu bukan ilusi, tapi napas tiap pagi
+[132.84s-138.02s] (english) Biar orang pamer, kita berdoa, biar hati tertamu, punya alat
+[139.34s-145.52s] (english) Cinta, cinta ini terkenas strong, kita ini terkenas strong
+[145.52s-151.04s] (mixed) Cinta ini bukan akhirku, kamu bukan ikhmalam
+[151.04s-156.80s] (english) Tapi doa yang gata berpelan, biar dunia sibuk pencipaan
+[157.44s-161.84s] (english) Sibuk rawal perasaan, cinta ini terkenas strong
+[163.84s-167.00s] (english) Cinta ini terkenas strong
+[167.00s-173.62s] (indonesian) Kamu tujuan terakhirku, semua bisa hilang di timeline
+[175.68s-182.72s] (english) Tapi kamu, gak pernah offline
+[187.70s-189.76s] (english) Di hatiku
 
 ============================================================
 === WORD-LEVEL TIMESTAMPS ===
-[0.00s-0.34s] Ya?
-[2.70s-3.38s] Jat
-[3.38s-3.62s] muda
-[3.62s-3.96s] tangkai
-[3.96s-4.36s] rapat
-[4.36s-4.64s] pari
-[4.64s-5.06s] porna
-[6.56s-7.24s] Malaure
-[7.24s-7.40s] tapi
-[7.40s-7.66s] rame
-[7.66s-8.16s] janji
-[9.74s-10.42s] Ya?
-[10.74s-11.14s] Kata
-[11.14s-11.34s] mu
-[11.34s-11.60s] cinta
-[11.60s-11.96s] tapi
-[11.96s-12.30s] dilay
-[12.30s-12.72s] terus
-[12.72s-13.14s] aku
-[13.14s-13.52s] Dasa
-[13.52s-14.12s] bertapis
-[14.12s-14.60s] -apapun
-[14.60s-14.84s] bisa
-[14.84s-15.18s] minusah
-[15.68s-16.04s] Tori
-[16.04s-16.68s] muaktif
-[16.68s-16.94s] tapi
-[16.94s-17.16s] chat
-[17.16s-17.56s] kungang
-[17.56s-17.92s] Gur
-[17.92s-18.26s] janji
-[18.26s-18.74s] bahagia
-[18.74s-19.04s] tapi
-[19.04s-19.40s] draknya
-[19.40s-19.66s] belum
-[19.66s-20.00s] dikunjur
-[20.52s-20.74s] Kau
-[20.74s-20.94s] bilang
-[20.94s-21.32s] kerja
-[21.32s-21.66s] lembur
-[21.66s-22.12s] buat
-[22.12s-22.42s] masa
-[22.42s-23.14s] depan
-[23.14s-23.44s] Tapi
-[23.44s-23.74s] api
-[23.74s-23.76s] di
-[23.76s-24.10s] tik
-[24.10s-24.30s] kok
-[24.30s-24.74s] tiap
-[24.74s-25.04s] makan
-[25.04s-25.62s] malam
-[25.62s-25.96s] Kata
-[25.96s-26.26s] kun
-[26.26s-26.54s] ga
-[26.54s-26.84s] apa
-[26.84s-27.26s] pada
-[27.26s-27.54s] hal
-[27.54s-27.78s] aku
-[27.78s-28.16s] tahu
-[28.16s-28.48s] Kau
-[28.48s-28.70s] lebih
-[28.70s-29.12s] sayang
-[29.12s-29.54s] senyial
-[29.54s-30.16s] daripada
-[30.16s-30.86s] aku
-[30.86s-31.18s] Kau
-[31.18s-31.76s] janji
-[31.76s-32.52s] manis
-[32.52s-33.28s] tapi
-[33.28s-33.82s] cuma
-[33.82s-34.94s] revisi
-[34.94s-36.00s] Kayak
-[36.00s-36.74s] undang
-[36.74s-37.56s] -undang
-[37.56s-38.10s] disakan
-[38.10s-38.82s] tapi
-[38.82s-39.66s] tadi
-[39.66s-42.30s] sih
-[42.30s-42.72s] Chat
-[42.72s-43.22s] muka
-[43.22s-43.62s] ya
-[43.62s-44.48s] janji
-[44.48s-46.38s] negara
-[46.90s-47.56s] Ya?
-[47.98s-48.30s] Datang
-[48.30s-48.92s] manis
-[48.92s-49.28s] hilang
-[49.28s-50.18s] tanpa
-[50.18s-51.28s] suara
-[52.16s-52.98s] Chat
-[52.98s-53.52s] muka
-[53.52s-53.94s] ya
-[53.94s-54.78s] janji
-[54.78s-56.70s] negara
-[56.70s-57.58s] Rame
-[57.58s-58.12s] janji
-[58.12s-58.56s] tapi
-[58.56s-58.94s] tampar
-[58.94s-59.80s] realita
-[59.80s-60.20s] Kau
-[60.20s-60.38s] bilang
-[60.38s-60.68s] ciman
-[60.68s-60.98s] haka
-[60.98s-61.46s] tapi
-[61.46s-62.02s] ngetelik
-[62.02s-62.18s] suara
-[62.70s-63.46s] Jok
-[64.72s-65.48s] Akurat
-[65.48s-65.76s] kiat
-[65.76s-66.34s] kecil
-[66.34s-66.52s] di
-[66.52s-66.86s] hati
-[66.86s-67.00s] yang
-[67.00s-67.48s] besar
-[67.48s-68.16s] Mul
-[68.16s-68.26s] tang
-[68.26s-68.50s] waktu
-[68.50s-68.86s] demi
-[68.86s-69.18s] cinta
-[69.18s-69.40s] yang
-[69.40s-69.56s] tak
-[69.56s-69.94s] cair
-[70.26s-70.80s] Kata
-[70.80s-71.06s] muka
-[71.06s-71.46s] bar
-[71.46s-71.78s] nanti
-[71.78s-72.80s] semalancar
-[72.80s-73.08s] Tapi
-[73.08s-73.46s] tiap
-[73.46s-73.90s] numgu
-[73.90s-74.44s] malat
-[74.44s-74.72s] tambah
-[74.72s-75.38s] sadar
-[75.38s-75.66s] Cinta
-[75.66s-76.08s] kukai
-[76.08s-76.64s] api,
-[76.76s-76.96s] bn
-[76.96s-77.44s] davisi
-[77.44s-77.76s] tapi
-[77.76s-78.28s] Niat
-[78.28s-78.70s] harapan
-[78.70s-79.14s] kukai
-[79.14s-79.58s] akutang
-[79.58s-79.88s] luar
-[79.88s-80.16s] negri
-[80.16s-80.48s] belum
-[80.48s-80.78s] luna
-[80.78s-81.12s] Juga
-[81.12s-81.62s] cepat,
-[81.62s-82.08s] kau
-[82.08s-82.54s] trending
-[82.54s-82.82s] di
-[82.82s-83.10s] doa
-[83.10s-83.36s] kuti
-[83.36s-83.74s] amal
-[83.74s-84.66s] Tapi
-[84.66s-84.94s] cuma
-[84.94s-85.56s] headline
-[85.56s-86.00s] tanpa
-[86.00s-86.52s] lama
-[86.52s-87.58s] Kalau
-[87.58s-87.90s] cinta
-[87.90s-88.36s] cuma
-[88.36s-89.16s] janji
-[89.16s-89.54s] aku
-[89.54s-89.92s] bareng
-[89.92s-90.14s] ti
-[90.14s-90.90s] Jadirak
-[90.90s-91.14s] kiat
-[91.14s-92.24s] hati
-[92.24s-92.74s] Kalau
-[92.74s-93.00s] ced
-[93.00s-93.54s] mojuma
-[93.54s-94.34s] janji
-[94.34s-95.04s] khusim
-[95.04s-95.26s] pan
-[95.26s-95.64s] dalam
-[95.64s-96.30s] lagu
-[96.30s-97.18s] ini
-[97.18s-97.56s] Chat
-[97.56s-98.06s] muka
-[98.06s-98.42s] ya
-[98.42s-99.10s] janji
-[99.10s-99.74s] negara
-[101.92s-102.98s] Semanit
-[102.98s-103.40s] manis
-[103.40s-104.02s] semu
-[104.02s-105.14s] kecewa
-[106.78s-107.84s] Kau
-[107.84s-108.06s] bilang
-[108.06s-108.40s] cinta
-[108.40s-109.08s] tapi
-[109.08s-110.34s] wajana
-[111.82s-113.00s] Chat
-[113.00s-113.54s] muka
-[113.54s-113.96s] ya
-[113.96s-114.58s] janji
-[114.58s-115.14s] negara
-[115.14s-115.52s] Chat
-[115.52s-116.12s] muka
-[116.12s-116.54s] ya
-[116.54s-117.12s] janji
-[117.12s-118.30s] negara
-[122.12s-123.30s] Ya
-[123.30s-124.48s] cinta
-[124.48s-125.02s] muruh
-[125.02s-127.20s] Selalu
-[127.20s-127.42s] on
-[127.42s-127.84s] progress
-[127.84s-129.80s] Aku
-[129.80s-130.08s] cuma
-[130.08s-130.76s] rakyat
-[131.34s-132.88s] Tapi
-[132.88s-133.16s] masih
-[133.16s-133.64s] berharap
-[133.64s-134.00s] sedang
-[134.00s-134.86s] selanjutnya
-[134.86s-136.96s] Ada
-[136.96s-137.62s] hasilnya
-[138.62s-139.98s] Jadmuka
-[139.98s-140.42s] ya
-[140.42s-141.14s] janji
-[141.14s-143.58s] negara
-[143.58s-144.56s] Jadmuka
-[144.56s-144.96s] ya
-[144.96s-145.58s] janji
-[145.58s-146.26s] negara
-[148.62s-149.40s] Semanit
-[149.40s-149.90s] manis
-[149.90s-150.46s] semu
-[150.46s-151.70s] kecewa
-[153.61s-154.30s] Kau
-[154.30s-154.52s] bilang
-[154.52s-154.86s] cinta
-[154.86s-155.56s] tapi
-[155.56s-156.48s] wajana
-[158.62s-159.48s] Chat
-[159.48s-160.00s] muka
-[160.00s-160.40s] ya
-[160.40s-161.04s] janji
-[161.04s-161.88s] negara
-[167.62s-168.48s] Ya
+[22.62s-23.94s] Kita
+[23.94s-24.58s] ketemu
+[24.58s-24.82s] di
+[24.82s-25.24s] dunia
+[25.24s-25.96s] cepat,
+[25.96s-26.68s] semua
+[26.68s-27.50s] berlomba
+[27.50s-27.82s] viral
+[27.82s-28.48s] cepat
+[28.48s-28.76s] Tapi
+[28.76s-29.20s] kamu
+[29.20s-29.70s] lain
+[29.70s-30.16s] gak
+[30.16s-30.86s] kejauh
+[30.86s-31.14s] view,
+[31.48s-31.56s] gak
+[31.56s-32.08s] cari
+[32.08s-32.36s] likes
+[32.36s-32.76s] cuma
+[32.76s-33.44s] kasih
+[33.44s-33.96s] new
+[33.96s-34.38s] Tentang
+[34.38s-34.74s] laksa
+[34.74s-35.02s] yang
+[35.02s-35.36s] gak
+[35.36s-36.02s] trending,
+[36.74s-36.96s] tentang
+[36.96s-37.32s] -tentang
+[37.32s-37.98s] meski
+[37.98s-38.76s] pending
+[38.76s-39.22s] Aku
+[39.22s-39.62s] gak
+[39.62s-39.88s] butuh
+[39.88s-40.46s] filter
+[40.46s-41.28s] haji,
+[41.48s-41.76s] cukup
+[41.76s-42.64s] pelukmu
+[42.64s-43.00s] udah
+[43.00s-43.50s] hancar
+[43.50s-43.96s] di
+[43.96s-44.42s] hati
+[45.80s-46.72s] Sayang,
+[46.86s-47.10s] sama
+[47.10s-47.78s] dunia
+[47.78s-48.48s] makin
+[48.48s-49.56s] langsung,
+[49.64s-50.34s] aku
+[50.34s-51.02s] tetap
+[51.02s-52.00s] percaya
+[52.00s-52.40s] yang
+[52.40s-53.48s] asli
+[53.48s-53.88s] itu
+[53.88s-54.22s] kamu
+[54.22s-54.88s] Cinta
+[54.88s-55.60s] di
+[55.60s-56.46s] tengah
+[56.46s-57.10s] strong,
+[57.28s-57.60s] tetap
+[57.60s-58.00s] butuh
+[58.00s-58.42s] alat
+[58.42s-58.76s] mirang
+[58.76s-59.56s] hilang
+[59.56s-60.14s] Kau
+[60.14s-61.06s] bukan
+[61.06s-61.44s] mati
+[61.44s-62.28s] malam,
+[62.46s-62.76s] tapi
+[62.76s-63.40s] doa
+[63.40s-63.78s] yang
+[63.78s-64.38s] datang
+[64.38s-65.00s] pelan
+[65.00s-65.38s] Biar
+[65.38s-66.00s] dunia
+[66.00s-66.60s] sibuk
+[66.60s-69.40s] pencitraan,
+[69.40s-70.48s] aku
+[70.48s-71.24s] sibuk
+[71.24s-71.86s] rawat
+[71.86s-75.06s] perasaan
+[75.06s-75.76s] Cinta
+[75.76s-76.52s] di
+[76.52s-77.60s] tengah
+[77.60s-78.80s] strong,
+[79.50s-79.66s] kamu
+[79.66s-80.46s] tetap
+[80.46s-80.70s] go
+[80.70s-81.30s] Orang
+[81.30s-81.64s] cari
+[81.64s-82.12s] trending,
+[82.44s-82.60s] aku
+[82.60s-83.18s] cari
+[83.18s-83.56s] tanah,
+[83.78s-83.86s] kamu
+[83.86s-84.28s] kaya
+[84.28s-84.64s] lagu
+[84.64s-85.20s] lawas,
+[85.40s-85.52s] tapi
+[85.52s-86.18s] menang
+[86.18s-86.52s] Bukan
+[86.52s-87.20s] sekadar
+[87.20s-87.46s] hype
+[87.46s-87.82s] dua
+[87.82s-88.38s] minggu,
+[88.54s-88.82s] tapi
+[88.82s-89.22s] kisah
+[89.22s-89.76s] panjang
+[89.76s-90.02s] gak
+[90.02s-90.34s] bisa
+[90.34s-90.64s] skip
+[90.64s-91.36s] begitu
+[91.36s-91.76s] Kamu
+[91.76s-91.96s] gak
+[91.96s-92.36s] pernah
+[92.36s-92.76s] janji
+[92.76s-93.56s] surga,
+[94.06s-94.32s] tapi
+[94.32s-94.80s] sabar
+[94.80s-95.06s] tiap
+[95.06s-95.34s] drama
+[95.34s-96.56s] kerja
+[96.56s-96.98s] Cinta
+[96.98s-97.36s] ini
+[97.36s-97.96s] bukan
+[97.96s-99.08s] konten,
+[99.38s-99.62s] ini
+[99.62s-99.90s] healing
+[99.90s-100.30s] yang
+[100.30s-101.50s] konsisten
+[101.50s-103.18s] Cinta,
+[104.28s-104.96s] alat
+[104.96s-106.30s] hidupnya
+[106.30s-107.00s] pedam,
+[107.50s-107.74s] aku
+[107.74s-108.38s] masih
+[108.38s-109.34s] hafal
+[109.34s-110.80s] suaramu
+[110.80s-111.32s] dalam
+[111.32s-112.78s] Tak
+[112.78s-113.30s] dapat
+[113.30s-113.96s] dukrend
+[113.96s-114.44s] di
+[114.44s-117.00s] barang,
+[117.44s-117.54s] asal
+[117.54s-118.18s] tetap
+[118.18s-118.86s] saling
+[118.86s-119.44s] yaring
+[119.44s-120.30s] didih
+[120.30s-122.60s] Cinta
+[122.60s-123.38s] ini
+[123.38s-124.08s] terkenas
+[124.08s-124.60s] strong,
+[124.84s-125.36s] tetap
+[125.36s-125.76s] hidup
+[125.76s-126.62s] pelurunya
+[126.62s-127.40s] mohon
+[127.40s-128.06s] Kamu
+[128.06s-128.80s] bukan
+[128.80s-129.90s] ilusi,
+[130.34s-130.52s] tapi
+[130.52s-131.32s] napas
+[131.32s-132.26s] tiap
+[132.26s-132.84s] pagi
+[132.84s-133.20s] Biar
+[133.20s-133.78s] orang
+[133.78s-134.40s] pamer,
+[134.60s-134.80s] kita
+[134.80s-135.46s] berdoa,
+[135.74s-136.16s] biar
+[136.16s-136.50s] hati
+[136.50s-137.20s] tertamu,
+[137.20s-137.44s] punya
+[137.44s-138.02s] alat
+[139.34s-140.50s] Cinta,
+[140.68s-141.36s] cinta
+[141.36s-141.82s] ini
+[141.82s-142.66s] terkenas
+[142.66s-142.96s] strong,
+[143.06s-143.72s] kita
+[143.72s-144.42s] ini
+[144.42s-144.90s] terkenas
+[144.90s-145.52s] strong
+[145.52s-146.72s] Cinta
+[146.72s-146.74s] ini
+[146.74s-147.26s] bukan
+[147.26s-148.12s] akhirku,
+[148.18s-148.86s] kamu
+[148.86s-149.74s] bukan
+[149.74s-151.04s] ikhmalam
+[151.04s-151.42s] Tapi
+[151.42s-151.96s] doa
+[151.96s-152.20s] yang
+[152.20s-152.70s] gata
+[152.70s-153.68s] berpelan,
+[153.78s-154.06s] biar
+[154.06s-154.68s] dunia
+[154.68s-155.30s] sibuk
+[155.30s-156.80s] pencipaan
+[157.13s-157.74s] Sibuk
+[157.74s-158.34s] rawal
+[158.34s-159.24s] perasaan,
+[159.44s-160.14s] cinta
+[160.14s-160.52s] ini
+[160.52s-161.28s] terkenas
+[161.28s-161.84s] strong
+[163.84s-164.46s] Cinta
+[164.46s-165.12s] ini
+[165.12s-166.36s] terkenas
+[166.36s-167.00s] strong
+[167.00s-167.46s] Kamu
+[167.46s-168.06s] tujuan
+[168.06s-170.04s] terakhirku,
+[170.04s-172.00s] semua
+[172.00s-172.30s] bisa
+[172.30s-172.62s] hilang
+[172.62s-172.82s] di
+[172.82s-173.62s] timeline
+[175.68s-177.08s] Tapi
+[177.08s-178.08s] kamu,
+[178.54s-178.94s] gak
+[178.94s-179.48s] pernah
+[179.48s-182.72s] offline
+[187.66s-188.36s] Di
+[188.36s-189.76s] hatiku

@@ -1,308 +1,375 @@
 === ADVANCED MATCHED LYRICS RESULT ===
-Total matched lyrics: 37
+Total matched lyrics: 45
 ============================================================
 
 Lyric 1:
-  Text: Yeah...
-  Timing: 0.00s - 0.50s
-  Language: english
-  Word Count: 1
-  Match Method: enhanced_fallback
+  Text: Kita ketemu di dunia cepat,
+  Timing: 22.62s - 25.96s
+  Language: mixed
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.20
 
 Lyric 2:
-  Text: Chatmu datang kayak rapat paripurna — molor tapi rame janji.
-  Timing: 2.70s - 8.16s
+  Text: Eh cinta, kalau nanti dunia padam,
+  Timing: 22.62s - 25.50s
   Language: english
-  Word Count: 10
-  Match Method: forced_alignment_sliding
-  Similarity: 0.50
+  Word Count: 6
+  Match Method: multi_scale_semantic
+  Similarity: 1.04
+  Fuzzy Similarity: 0.23
+  Scale Match: small
 
 Lyric 3:
-  Text: Katamu cinta, tapi delay terus,
-  Timing: 10.74s - 12.72s
-  Language: english
-  Word Count: 5
-  Match Method: forced_alignment_sliding
+  Text: Semua sibuk nge-scroll, tapi aku masih nge-save kamu~
+  Timing: 25.96s - 30.58s
+  Language: indonesian
+  Word Count: 8
+  Match Method: multi_scale_semantic
   Similarity: 0.79
+  Fuzzy Similarity: 0.22
+  Scale Match: medium
 
 Lyric 4:
-  Text: Aku udah sabar, tapi sabar pun bisa minus.
-  Timing: 11.96s - 15.18s
+  Text: semua berlomba viral cepat.
+  Timing: 25.96s - 28.48s
   Language: english
-  Word Count: 8
-  Match Method: forced_alignment_sliding
-  Similarity: 0.43
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.11
 
 Lyric 5:
-  Text: Story-mu aktif, tapi chatku nganggur,
-  Timing: 16.68s - 17.16s
+  Text: tapi kamu…
+  Timing: 28.48s - 28.76s
   Language: english
-  Word Count: 5
-  Match Method: forced_alignment_sliding
-  Similarity: 0.57
-
-Lyric 6:
-  Text: Janji bahagia, tapi draft-nya belum dikunjur.
-  Timing: 17.92s - 20.00s
-  Language: indonesian
-  Word Count: 6
+  Word Count: 2
   Match Method: forced_alignment_hierarchical
-  Similarity: 0.66
-
-Lyric 7:
-  Text: Kau bilang kerja lembur buat masa depan,
-  Timing: 20.52s - 23.14s
-  Language: mixed
-  Word Count: 7
-  Match Method: forced_alignment_hierarchical
-  Similarity: 1.14
-
-Lyric 8:
-  Text: Tapi update TikTok tiap makan malam.
-  Timing: 23.14s - 25.62s
-  Language: english
-  Word Count: 6
-  Match Method: forced_alignment_sliding
   Similarity: 0.78
 
-Lyric 9:
-  Text: Kataku, “nggak apa,” padahal aku tahu,
-  Timing: 25.62s - 28.16s
-  Language: indonesian
-  Word Count: 6
-  Match Method: forced_alignment_sliding
-  Similarity: 0.67
-
-Lyric 10:
-  Text: Kau lebih sayang sinyal daripada aku.
-  Timing: 28.16s - 30.86s
-  Language: indonesian
-  Word Count: 6
-  Match Method: forced_alignment_hierarchical
-  Similarity: 0.88
-
-Lyric 11:
-  Text: Kau janji manis, tapi cuma revisi,
-  Timing: 30.86s - 34.94s
-  Language: indonesian
-  Word Count: 6
-  Match Method: forced_alignment_hierarchical
-  Similarity: 0.94
-
-Lyric 12:
-  Text: Kau janji bahagia, tapi tinggal rencana~
-  Timing: 30.86s - 33.28s
-  Language: mixed
-  Word Count: 6
-  Match Method: forced_alignment_hierarchical
-  Similarity: 0.54
-
-Lyric 13:
-  Text: Cintaku kayak APBN: defisit tapi niat.
-  Timing: 32.52s - 36.35s
-  Language: english
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.20
-  Fuzzy Similarity: 0.27
-  Scale Match: small
-
-Lyric 14:
-  Text: Kayak undang-undang: disahkan tapi tak diisi.
-  Timing: 34.94s - 39.66s
-  Language: mixed
-  Word Count: 6
-  Match Method: forced_alignment_sliding
-  Similarity: 0.44
-
-Lyric 15:
-  Text: Chatmu kayak janji negara~
-  Timing: 43.62s - 46.38s
-  Language: english
-  Word Count: 4
-  Match Method: forced_alignment_hierarchical
-  Similarity: 0.58
-
-Lyric 16:
-  Text: Chatmu kayak janji negara~
-  Timing: 43.62s - 46.38s
-  Language: english
-  Word Count: 4
-  Match Method: forced_alignment_hierarchical
-  Similarity: 0.58
-
-Lyric 17:
-  Text: Chatmu kayak janji negara~
-  Timing: 43.62s - 46.38s
-  Language: english
-  Word Count: 4
-  Match Method: forced_alignment_hierarchical
-  Similarity: 0.58
-
-Lyric 18:
-  Text: Datang manis, hilang tanpa suara~
-  Timing: 47.98s - 51.28s
-  Language: english
-  Word Count: 5
-  Match Method: forced_alignment_hierarchical
-  Similarity: 0.89
-
-Lyric 19:
-  Text: Rame janji, tapi tanpa realita~
-  Timing: 56.70s - 59.80s
-  Language: english
-  Word Count: 5
-  Match Method: forced_alignment_hierarchical
-  Similarity: 0.63
-
-Lyric 20:
-  Text: Aku rakyat kecil di hati yang besar,
-  Timing: 64.72s - 67.48s
-  Language: indonesian
-  Word Count: 7
-  Match Method: forced_alignment_hierarchical
-  Similarity: 0.79
-
-Lyric 21:
-  Text: Ngutang waktu demi cinta yang tak cair.
-  Timing: 68.16s - 69.94s
+Lyric 6:
+  Text: Tapi kamu lain — nggak kejar views,
+  Timing: 28.76s - 32.72s
   Language: english
   Word Count: 7
-  Match Method: forced_alignment_hierarchical
-  Similarity: 1.05
-
-Lyric 22:
-  Text: Katamu sabar, nanti semua lancar,
-  Timing: 70.26s - 71.93s
-  Language: mixed
-  Word Count: 5
   Match Method: multi_scale_semantic
-  Similarity: 1.23
-  Fuzzy Similarity: 0.27
-  Scale Match: small
+  Similarity: 1.31
+  Fuzzy Similarity: 0.31
+  Scale Match: medium
 
-Lyric 23:
-  Text: Tapi tiap nunggu malah tambah sadar.
-  Timing: 72.80s - 75.38s
-  Language: mixed
+Lyric 7:
+  Text: nggak cari likes, cuma kasih news.
+  Timing: 31.48s - 33.96s
+  Language: english
   Word Count: 6
   Match Method: forced_alignment_hierarchical
   Similarity: 0.65
 
-Lyric 24:
-  Text: Harapanku kayak utang luar negeri — belum lunas juga, cepat.
-  Timing: 78.28s - 81.40s
+Lyric 8:
+  Text: Tentang rasa yang nggak trending,
+  Timing: 33.96s - 36.02s
   Language: english
-  Word Count: 10
-  Match Method: multi_scale_semantic
-  Similarity: 1.57
-  Fuzzy Similarity: 0.34
-  Scale Match: medium
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.82
 
-Lyric 25:
-  Text: Kau trending di doaku tiap malam,
-  Timing: 81.62s - 83.10s
+Lyric 9:
+  Text: tentang tenang meski pending.
+  Timing: 36.74s - 38.76s
   Language: english
-  Word Count: 6
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.63
+
+Lyric 10:
+  Text: Aku nggak butuh filter HD,
+  Timing: 38.76s - 41.28s
+  Language: english
+  Word Count: 5
   Match Method: forced_alignment_hierarchical
   Similarity: 0.78
 
-Lyric 26:
-  Text: Tapi cuma headline tanpa laman.
-  Timing: 83.74s - 86.52s
+Lyric 11:
+  Text: cukup pelukmu, udah 4K di hati.
+  Timing: 41.48s - 44.42s
+  Language: english
+  Word Count: 6
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.62
+
+Lyric 12:
+  Text: Sayang, kalau dunia makin palsu,
+  Timing: 45.80s - 49.56s
   Language: english
   Word Count: 5
-  Match Method: forced_alignment_hierarchical
-  Similarity: 1.11
-
-Lyric 27:
-  Text: Kalau cinta cuma janji,
-  Timing: 86.52s - 89.16s
-  Language: english
-  Word Count: 4
-  Match Method: forced_alignment_hierarchical
-  Similarity: 1.11
-
-Lyric 28:
-  Text: Kalau chatmu cuma janji,
-  Timing: 86.52s - 89.16s
-  Language: english
-  Word Count: 4
-  Match Method: forced_alignment_hierarchical
-  Similarity: 0.66
-
-Lyric 29:
-  Text: Aku berhenti jadi rakyat hati.
-  Timing: 89.92s - 92.47s
-  Language: english
-  Word Count: 5
-  Match Method: multi_scale_semantic
-  Similarity: 1.37
-  Fuzzy Similarity: 0.20
-  Scale Match: small
-
-Lyric 30:
-  Text: Kusimpan dalam lagu ini.
-  Timing: 95.04s - 97.18s
-  Language: english
-  Word Count: 4
   Match Method: forced_alignment_hierarchical
   Similarity: 0.80
 
-Lyric 31:
-  Text: Kau bilang cinta, tapi wacana~
-  Timing: 106.78s - 110.34s
-  Language: english
-  Word Count: 5
-  Match Method: forced_alignment_hierarchical
-  Similarity: 0.88
-
-Lyric 32:
-  Text: Chatmu kayak janji negara~ (hoo yeah~)
-  Timing: 113.96s - 116.34s
-  Language: english
-  Word Count: 6
-  Match Method: multi_scale_semantic
-  Similarity: 1.27
-  Fuzzy Similarity: 0.24
-  Scale Match: small
-
-Lyric 33:
-  Text: Cintamu RUU, selalu “on progress.”
-  Timing: 127.20s - 127.84s
-  Language: english
-  Word Count: 5
-  Match Method: forced_alignment_sliding
-  Similarity: 0.57
-
-Lyric 34:
-  Text: Aku cuma rakyat, tapi masih berharap sidang.
-  Timing: 127.84s - 134.00s
+Lyric 13:
+  Text: aku tetap percaya yang asli itu kamu~
+  Timing: 49.64s - 54.22s
   Language: mixed
   Word Count: 7
   Match Method: forced_alignment_hierarchical
-  Similarity: 0.96
+  Similarity: 1.10
+
+Lyric 14:
+  Text: Cinta di tengah scroll,
+  Timing: 54.22s - 56.46s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.00
+
+Lyric 15:
+  Text: Cinta di tengah scroll…
+  Timing: 54.22s - 56.46s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.00
+
+Lyric 16:
+  Text: Cinta di tengah scroll,
+  Timing: 54.22s - 56.46s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.00
+
+Lyric 17:
+  Text: Cinta di tengah scroll…
+  Timing: 54.22s - 56.46s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.00
+
+Lyric 18:
+  Text: tetap utuh walau viral hilang.
+  Timing: 57.60s - 59.76s
+  Language: indonesian
+  Word Count: 5
+  Match Method: multi_scale_semantic
+  Similarity: 0.90
+  Fuzzy Similarity: 0.21
+  Scale Match: small
+
+Lyric 19:
+  Text: tapi doa yang datang pelan.
+  Timing: 62.46s - 65.00s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.12
+
+Lyric 20:
+  Text: Biar dunia sibuk pencitraan,
+  Timing: 65.00s - 69.40s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.20
+
+Lyric 21:
+  Text: aku sibuk rawat perasaan.
+  Timing: 69.40s - 75.06s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.11
+
+Lyric 22:
+  Text: kamu tetap goal.
+  Timing: 79.50s - 80.70s
+  Language: mixed
+  Word Count: 3
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.00
+
+Lyric 23:
+  Text: Orang cari trending, aku cari tenang,
+  Timing: 80.70s - 83.56s
+  Language: english
+  Word Count: 6
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.02
+
+Lyric 24:
+  Text: Kita nggak perlu trending bareng,
+  Timing: 80.70s - 82.79s
+  Language: english
+  Word Count: 5
+  Match Method: multi_scale_semantic
+  Similarity: 1.15
+  Fuzzy Similarity: 0.17
+  Scale Match: small
+
+Lyric 25:
+  Text: kamu kayak lagu lawas — tapi menang.
+  Timing: 83.78s - 86.52s
+  Language: english
+  Word Count: 7
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.52
+
+Lyric 26:
+  Text: Bukan sekadar hype dua minggu,
+  Timing: 86.18s - 88.38s
+  Language: mixed
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.20
+
+Lyric 27:
+  Text: tapi kisah panjang, nggak bisa skip begitu.
+  Timing: 88.54s - 91.36s
+  Language: english
+  Word Count: 7
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.83
+
+Lyric 28:
+  Text: Kamu nggak pernah janji surga,
+  Timing: 91.36s - 93.56s
+  Language: mixed
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.98
+
+Lyric 29:
+  Text: tapi sabar tiap drama kerja.
+  Timing: 94.06s - 96.56s
+  Language: mixed
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.12
+
+Lyric 30:
+  Text: Cinta ini bukan konten,
+  Timing: 96.56s - 99.08s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.20
+
+Lyric 31:
+  Text: ini healing yang konsisten.
+  Timing: 99.38s - 101.50s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.11
+
+Lyric 32:
+  Text: aku masih hafal suaramu dalam.
+  Timing: 107.50s - 111.32s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.12
+
+Lyric 33:
+  Text: asal tetap saling nyaring di diam.
+  Timing: 117.44s - 122.60s
+  Language: indonesian
+  Word Count: 6
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.59
+
+Lyric 34:
+  Text: Yeah…
+  Timing: 118.86s - 119.44s
+  Language: english
+  Word Count: 1
+  Match Method: forced_alignment_sliding
+  Similarity: 0.61
 
 Lyric 35:
-  Text: Yeah...
-  Timing: 140.56s - 141.06s
+  Text: tetap hidup walau dunia bohong.
+  Timing: 124.84s - 126.62s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.52
+
+Lyric 36:
+  Text: Kamu bukan notif malam,
+  Timing: 127.40s - 128.80s
+  Language: english
+  Word Count: 4
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.78
+
+Lyric 37:
+  Text: Kamu bukan ilusi,
+  Timing: 127.40s - 129.90s
+  Language: mixed
+  Word Count: 3
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.20
+
+Lyric 38:
+  Text: tapi napas di tiap pagi.
+  Timing: 130.34s - 132.26s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.74
+
+Lyric 39:
+  Text: Biar orang pamer, kita berdoa,
+  Timing: 132.84s - 135.46s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.20
+
+Lyric 40:
+  Text: biar hati tetap punya arah.
+  Timing: 135.74s - 138.02s
+  Language: english
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.79
+
+Lyric 41:
+  Text: Yeah…
+  Timing: 157.31s - 157.81s
   Language: english
   Word Count: 1
   Match Method: enhanced_fallback
 
-Lyric 36:
-  Text: Semenit manis, seumur kecewa~
-  Timing: 144.96s - 151.70s
+Lyric 42:
+  Text: Heh… cinta digital, rasa masih real.
+  Timing: 157.74s - 160.80s
   Language: english
-  Word Count: 4
-  Match Method: forced_alignment_sliding
-  Similarity: 0.69
+  Word Count: 6
+  Match Method: multi_scale_semantic
+  Similarity: 0.92
+  Fuzzy Similarity: 0.18
+  Scale Match: small
 
-Lyric 37:
-  Text: (Oh~ chatmu kayak janji negara~)
-  Timing: 160.40s - 161.88s
+Lyric 43:
+  Text: kamu tujuan terakhirku.
+  Timing: 167.00s - 168.06s
+  Language: english
+  Word Count: 3
+  Match Method: forced_alignment_hierarchical
+  Similarity: 0.98
+
+Lyric 44:
+  Text: Semua bisa hilang di timeline,
+  Timing: 170.04s - 173.62s
+  Language: indonesian
+  Word Count: 5
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.12
+
+Lyric 45:
+  Text: nggak pernah offline di hatiku.
+  Timing: 178.54s - 189.76s
   Language: english
   Word Count: 5
-  Match Method: forced_alignment_sliding
-  Similarity: 0.57
+  Match Method: forced_alignment_hierarchical
+  Similarity: 1.00
 

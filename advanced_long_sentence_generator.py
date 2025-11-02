@@ -36,11 +36,11 @@ class AdvancedLongSentenceLyricSyncGenerator:
         self.comparison_lyrics_file = "context/comparison_lyrics.txt"
         self.matched_lyrics_file = "context/matched_lyrics.txt"
         
-        # Load Whisper model
+        # Load Whisper model - gunakan medium untuk akurasi lebih baik
         self.logger.info("Loading Whisper model for advanced text extraction...")
         device = "cuda" if torch.cuda.is_available() else "cpu"
-        self.whisper_model = whisper.load_model("base", device=device)
-        self.logger.info(f"Whisper model loaded successfully on {device.upper()}!")
+        self.whisper_model = whisper.load_model("medium", device=device)
+        self.logger.info(f"Whisper model (medium) loaded successfully on {device.upper()}!")
         
         # Load Sentence Transformer
         self.logger.info("Loading Sentence Transformer for advanced semantic search...")
@@ -86,11 +86,16 @@ class AdvancedLongSentenceLyricSyncGenerator:
         self.logger.info("AI extracting text from audio with enhanced segmentation for long sentences...")
         
         try:
+            self.logger.info(f"Transcribing audio file: {self.audio_path}")
             result = self.whisper_model.transcribe(
                 self.audio_path, 
                 word_timestamps=True,
-                verbose=False
+                verbose=False,
+                language=None,  # Auto-detect language (supports Indonesian and English)
+                task="transcribe"
             )
+            self.logger.info(f"Detected language: {result.get('language', 'unknown')}")
+            self.logger.info(f"Number of segments: {len(result.get('segments', []))}")
             
             words_with_timestamps = []
             extracted_text_lines = []
@@ -1249,8 +1254,8 @@ class AdvancedLongSentenceLyricSyncGenerator:
 
 
 if __name__ == "__main__":
-    image_file = "context/chat.jpg"
-    audio_file = "context/Chatmu Kayak Janji Negara.mp3"
+    image_file = "context/Cinta di Tengah Scroll.mp3.png"
+    audio_file = "context/Cinta di Tengah Scroll.mp3"
     output_video_file = "context/advanced_long_sentence_video.mp4"
 
     generator = AdvancedLongSentenceLyricSyncGenerator(image_file, audio_file, output_video_file)
