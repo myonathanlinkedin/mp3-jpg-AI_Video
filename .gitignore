@@ -45,10 +45,8 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific
-context/*.mp4
-context/*.avi
-context/*.mov
-context/*.mkv
+context/
+context/**
 *.log
 temp/
 tmp/
