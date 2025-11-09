@@ -24,7 +24,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 class AdvancedLongSentenceLyricSyncGenerator:
-    def __init__(self, image_path, audio_path, output_path="context/advanced_long_sentence_video.mp4"):
+    def __init__(self, image_path, audio_path, output_path="context/advanced_long_sentence_video.mp4", lyrics_file=None):
         self.image_path = image_path
         self.audio_path = audio_path
         self.output_path = output_path
@@ -33,7 +33,8 @@ class AdvancedLongSentenceLyricSyncGenerator:
         
         # File paths untuk menyimpan hasil
         self.extracted_lyrics_file = "context/extracted_lyrics.txt"
-        self.comparison_lyrics_file = "context/comparison_lyrics.txt"
+        # Gunakan lyrics_file jika disediakan, otherwise default
+        self.comparison_lyrics_file = lyrics_file if lyrics_file else "context/comparison_lyrics.txt"
         self.matched_lyrics_file = "context/matched_lyrics.txt"
         
         # Load Whisper model - gunakan medium untuk akurasi lebih baik
@@ -1253,10 +1254,150 @@ class AdvancedLongSentenceLyricSyncGenerator:
             self.logger.error(f"Error creating video: {e}")
 
 
-if __name__ == "__main__":
-    image_file = "context/Cinta di Tengah Scroll.mp3.png"
-    audio_file = "context/Cinta di Tengah Scroll.mp3"
-    output_video_file = "context/advanced_long_sentence_video.mp4"
+def find_file_pairs(context_dir="context"):
+    """Mencari semua pasangan file MP3 + JPG/JPEG + TXT di folder context"""
+    import glob
+    import re
+    
+    # File-file sistem yang harus diabaikan
+    system_files = ['comparison_lyrics.txt', 'extracted_lyrics.txt', 'matched_lyrics.txt']
+    
+    # Get all files
+    mp3_files = glob.glob(os.path.join(context_dir, "*.mp3"))
+    image_files = glob.glob(os.path.join(context_dir, "*.jpg")) + glob.glob(os.path.join(context_dir, "*.jpeg"))
+    txt_files = [f for f in glob.glob(os.path.join(context_dir, "*.txt")) 
+                 if os.path.basename(f) not in system_files]
+    
+    # Normalize base names (remove extension, spaces, special chars, convert to lowercase)
+    def normalize_name(filename):
+        base = os.path.basename(filename)
+        name = os.path.splitext(base)[0]
+        # Remove spaces, special characters, convert to lowercase
+        # Handle "&" -> "Dan", remove underscores, remove dots
+        name_normalized = name.replace(" ", "").replace("&", "Dan").replace("_", "").replace(".", "").replace("-", "").lower()
+        # Remove any remaining special characters except alphanumeric
+        name_normalized = re.sub(r'[^a-z0-9]', '', name_normalized)
+        return name_normalized
+    
+    # Build dictionaries dengan multiple keys untuk matching fleksibel
+    mp3_dict = {}
+    for f in mp3_files:
+        normalized = normalize_name(f)
+        if normalized not in mp3_dict:
+            mp3_dict[normalized] = []
+        mp3_dict[normalized].append(f)
+    
+    image_dict = {}
+    for f in image_files:
+        normalized = normalize_name(f)
+        if normalized not in image_dict:
+            image_dict[normalized] = []
+        image_dict[normalized].append(f)
+    
+    txt_dict = {}
+    for f in txt_files:
+        normalized = normalize_name(f)
+        if normalized not in txt_dict:
+            txt_dict[normalized] = []
+        txt_dict[normalized].append(f)
+    
+    # Find pairs - coba match dengan berbagai variasi
+    pairs = []
+    processed_keys = set()
+    
+    for mp3_key in mp3_dict.keys():
+        if mp3_key in processed_keys:
+            continue
+            
+        # Cari matching di image dan txt
+        matched_image = None
+        matched_txt = None
+        
+        # Exact match pertama
+        if mp3_key in image_dict and mp3_key in txt_dict:
+            matched_image = image_dict[mp3_key][0]
+            matched_txt = txt_dict[mp3_key][0]
+        else:
+            # Coba fuzzy match - cari yang paling mirip
+            best_image_match = None
+            best_txt_match = None
+            best_image_score = 0
+            best_txt_score = 0
+            
+            for img_key, img_files in image_dict.items():
+                # Simple similarity check (jaccard-like)
+                common_chars = len(set(mp3_key) & set(img_key))
+                total_chars = len(set(mp3_key) | set(img_key))
+                if total_chars > 0:
+                    score = common_chars / total_chars
+                    if score > best_image_score and score > 0.7:  # Minimum 70% similarity
+                        best_image_score = score
+                        best_image_match = img_files[0]
+            
+            for txt_key, txt_files in txt_dict.items():
+                common_chars = len(set(mp3_key) & set(txt_key))
+                total_chars = len(set(mp3_key) | set(txt_key))
+                if total_chars > 0:
+                    score = common_chars / total_chars
+                    if score > best_txt_score and score > 0.7:  # Minimum 70% similarity
+                        best_txt_score = score
+                        best_txt_match = txt_files[0]
+            
+            if best_image_match and best_txt_match:
+                matched_image = best_image_match
+                matched_txt = best_txt_match
+        
+        if matched_image and matched_txt:
+            mp3_path = mp3_dict[mp3_key][0]
+            
+            # Generate output video name dari nama audio
+            mp3_base = os.path.basename(mp3_path)
+            video_name = os.path.splitext(mp3_base)[0] + "_video.mp4"
+            output_path = os.path.join(context_dir, video_name)
+            
+            pairs.append({
+                'audio': mp3_path,
+                'image': matched_image,
+                'lyrics': matched_txt,
+                'output': output_path
+            })
+            
+            processed_keys.add(mp3_key)
+    
+    return pairs
 
-    generator = AdvancedLongSentenceLyricSyncGenerator(image_file, audio_file, output_video_file)
-    generator.generate_video()
+
+if __name__ == "__main__":
+    # Scan semua pasangan file di context/
+    file_pairs = find_file_pairs("context")
+    
+    if not file_pairs:
+        logger.warning("No file pairs found! Make sure you have MP3 + JPG/JPEG + TXT files in context/ folder.")
+        logger.info("Example format: [audio_name].mp3 + [image_name].jpeg + [lyrics_name].txt")
+    else:
+        logger.info(f"Found {len(file_pairs)} file pair(s) to process:")
+        for i, pair in enumerate(file_pairs, 1):
+            logger.info(f"  {i}. {os.path.basename(pair['audio'])} + {os.path.basename(pair['image'])} + {os.path.basename(pair['lyrics'])}")
+        
+        # Process each pair
+        for i, pair in enumerate(file_pairs, 1):
+            logger.info("=" * 80)
+            logger.info(f"Processing pair {i}/{len(file_pairs)}: {os.path.basename(pair['audio'])}")
+            logger.info("=" * 80)
+            
+            try:
+                generator = AdvancedLongSentenceLyricSyncGenerator(
+                    image_path=pair['image'],
+                    audio_path=pair['audio'],
+                    output_path=pair['output'],
+                    lyrics_file=pair['lyrics']  # Gunakan TXT file yang sesuai
+                )
+                generator.generate_video()
+                logger.info(f"✅ Successfully created video: {pair['output']}")
+            except Exception as e:
+                logger.error(f"❌ Error processing {pair['audio']}: {e}")
+                logger.exception(e)
+                continue
+        
+        logger.info("=" * 80)
+        logger.info(f"Batch processing complete! Processed {len(file_pairs)} file pair(s).")
