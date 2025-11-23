@@ -88,13 +88,15 @@ class AdvancedLongSentenceLyricSyncGenerator:
         
         try:
             self.logger.info(f"Transcribing audio file: {self.audio_path}")
+            self.logger.info("⏳ Whisper transcribing in progress... (this may take 2-5 minutes for medium model)")
             result = self.whisper_model.transcribe(
                 self.audio_path, 
                 word_timestamps=True,
-                verbose=False,
+                verbose=True,  # Enable verbose untuk melihat progress
                 language=None,  # Auto-detect language (supports Indonesian and English)
                 task="transcribe"
             )
+            self.logger.info("✅ Transcription completed!")
             self.logger.info(f"Detected language: {result.get('language', 'unknown')}")
             self.logger.info(f"Number of segments: {len(result.get('segments', []))}")
             
@@ -1368,6 +1370,11 @@ def find_file_pairs(context_dir="context"):
 
 
 if __name__ == "__main__":
+    # Konfigurasi untuk regenerate file spesifik
+    # Set None untuk process semua file, atau set string untuk filter spesifik
+    # Contoh: "natal yang tak dirayakan" untuk regenerate file tersebut
+    REGENERATE_FILTER = None  # Set None untuk process semua file, atau set string untuk filter spesifik
+    
     # Scan semua pasangan file di context/
     file_pairs = find_file_pairs("context")
     
@@ -1375,29 +1382,46 @@ if __name__ == "__main__":
         logger.warning("No file pairs found! Make sure you have MP3 + JPG/JPEG + TXT files in context/ folder.")
         logger.info("Example format: [audio_name].mp3 + [image_name].jpeg + [lyrics_name].txt")
     else:
-        logger.info(f"Found {len(file_pairs)} file pair(s) to process:")
-        for i, pair in enumerate(file_pairs, 1):
-            logger.info(f"  {i}. {os.path.basename(pair['audio'])} + {os.path.basename(pair['image'])} + {os.path.basename(pair['lyrics'])}")
-        
-        # Process each pair
-        for i, pair in enumerate(file_pairs, 1):
-            logger.info("=" * 80)
-            logger.info(f"Processing pair {i}/{len(file_pairs)}: {os.path.basename(pair['audio'])}")
-            logger.info("=" * 80)
+        # Filter file pairs jika ada filter
+        if REGENERATE_FILTER:
+            filtered_pairs = []
+            filter_lower = REGENERATE_FILTER.lower()
+            for pair in file_pairs:
+                audio_base = os.path.basename(pair['audio']).lower()
+                if filter_lower in audio_base:
+                    filtered_pairs.append(pair)
             
-            try:
-                generator = AdvancedLongSentenceLyricSyncGenerator(
-                    image_path=pair['image'],
-                    audio_path=pair['audio'],
-                    output_path=pair['output'],
-                    lyrics_file=pair['lyrics']  # Gunakan TXT file yang sesuai
-                )
-                generator.generate_video()
-                logger.info(f"✅ Successfully created video: {pair['output']}")
-            except Exception as e:
-                logger.error(f"❌ Error processing {pair['audio']}: {e}")
-                logger.exception(e)
-                continue
+            if not filtered_pairs:
+                logger.warning(f"No file pairs found matching filter: {REGENERATE_FILTER}")
+                file_pairs = []  # Set empty untuk skip processing
+            else:
+                file_pairs = filtered_pairs
+                logger.info(f"🔧 Regenerating video(s) with filter: {REGENERATE_FILTER}")
         
-        logger.info("=" * 80)
-        logger.info(f"Batch processing complete! Processed {len(file_pairs)} file pair(s).")
+        if file_pairs:
+            logger.info(f"Found {len(file_pairs)} file pair(s) to process:")
+            for i, pair in enumerate(file_pairs, 1):
+                logger.info(f"  {i}. {os.path.basename(pair['audio'])} + {os.path.basename(pair['image'])} + {os.path.basename(pair['lyrics'])}")
+            
+            # Process each pair
+            for i, pair in enumerate(file_pairs, 1):
+                logger.info("=" * 80)
+                logger.info(f"Processing pair {i}/{len(file_pairs)}: {os.path.basename(pair['audio'])}")
+                logger.info("=" * 80)
+                
+                try:
+                    generator = AdvancedLongSentenceLyricSyncGenerator(
+                        image_path=pair['image'],
+                        audio_path=pair['audio'],
+                        output_path=pair['output'],
+                        lyrics_file=pair['lyrics']  # Gunakan TXT file yang sesuai
+                    )
+                    generator.generate_video()
+                    logger.info(f"✅ Successfully created video: {pair['output']}")
+                except Exception as e:
+                    logger.error(f"❌ Error processing {pair['audio']}: {e}")
+                    logger.exception(e)
+                    continue
+            
+            logger.info("=" * 80)
+            logger.info(f"Batch processing complete! Processed {len(file_pairs)} file pair(s).")
